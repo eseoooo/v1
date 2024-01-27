@@ -8,8 +8,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        raleway: ['var(--font-raleway)'],
-        sans: ['var(--font-pt-sans)'],
+        raleway: ["var(--font-raleway)"],
+        sans: ["var(--font-pt-sans)"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
