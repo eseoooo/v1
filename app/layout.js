@@ -11,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${raleway.variable} ${pt_sans.variable}`}>
+        The or
         {children}
       </body>
     </html>
