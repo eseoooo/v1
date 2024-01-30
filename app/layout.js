@@ -10,9 +10,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} ${pt_sans.variable} `}>
+      <body className={`${raleway.variable} ${pt_sans.variable}`}>
         <header></header>
-        <main>
+        <main className="mx-auto max-w-screen-2xl bg-red-900 min-h-dvh px-4 sm:px-5 md:px-10 lg:px-20 xl:px-40">
           {children}
         </main>
         <footer></footer>

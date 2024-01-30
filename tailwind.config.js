@@ -11,7 +11,9 @@ module.exports = {
         raleway: ["var(--font-raleway)"],
         sans: ["var(--font-pt-sans)"],
       },
-      backgroundImage: {},
+      backgroundImage: {
+        'gradient-315': 'linear-gradient(315deg, var(--tw-gradient-stops))'
+      },
       colors: {
         // Accent color
         "gold-900": "#5e4a29",
@@ -27,6 +29,9 @@ module.exports = {
         "light-700": "#adafb5",
         "light-600": "#c8cacf",
         "light-500": "#e1e3e6",
+        // Main background
+        "bg-gray-900": "#08080a",
+        "bg-gray-800": "#151418"
       },
     },
   },

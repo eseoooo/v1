@@ -1,0 +1,6 @@
+@layer base {
+  body {
+    @apply bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 leading-relaxed; 
+  }
+}
+
