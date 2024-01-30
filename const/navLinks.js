@@ -1,4 +1,4 @@
-export default navLinks = [
+const navLinks = [
   {
     name: "About",
     href: "/#about",
@@ -15,4 +15,6 @@ export default navLinks = [
     name: "Contact",
     href: "/#contact",
   },
-]
+];
+
+export default navLinks;
