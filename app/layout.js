@@ -10,9 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${raleway.variable} ${pt_sans.variable}`}>
-        The or
-        {children}
+      <body className={`${raleway.variable} ${pt_sans.variable} `}>
+        <header></header>
+        <main>
+          {children}
+        </main>
+        <footer></footer>
       </body>
     </html>
   );
