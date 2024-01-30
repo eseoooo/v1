@@ -11,6 +11,9 @@ module.exports = {
         raleway: ["var(--font-raleway)"],
         sans: ["var(--font-pt-sans)"],
       },
+      height: {
+        '17.5': '4.375rem',
+      },
       backgroundImage: {
         'gradient-315': 'linear-gradient(315deg, var(--tw-gradient-stops))'
       },
