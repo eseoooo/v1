@@ -1,4 +1,4 @@
-import navLinks from "@/const/navLinks";
+import { navLinks } from "@/lib/const";
 import NavLink from "@/components/header/nav-link";
 
 export default function NavBar() {

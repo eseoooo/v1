@@ -1,5 +1,5 @@
-import { raleway, pt_sans } from "@/app/fonts";
-import "@/app/css/globals.css";
+import { raleway, pt_sans } from "@/public/fonts";
+import "@/public/css/base.css";
 import Header from "@/components/header/header";
 
 export const metadata = {
