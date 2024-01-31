@@ -1,14 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  distDir: 'build',
+  distDir: "build",
   logging: {
     fetches: {
       fullUrl: true,
     },
   },
   experimental: {
-    webVitalsAttribution: ['FCP', 'LCP', 'CLS', 'FID', 'TTFB', 'INP']
-  }
+    webVitalsAttribution: ["FCP", "LCP", "CLS", "FID", "TTFB", "INP"],
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+
+    return config;
+  },
 };
 
 export default nextConfig;
