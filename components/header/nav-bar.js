@@ -13,6 +13,7 @@ export default function NavBar() {
           ))}
         </ol>
         <button
+          aria-label="menu"
           popovertarget="menu"
           type="button"
           className="h-10 w-10 text-gold-700 md:hidden"
