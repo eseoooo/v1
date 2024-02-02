@@ -43,6 +43,13 @@
 }
 
 @layer components {
+  .side-content {
+    @apply w-20 mr-14 lg:mr-28;
+  }
+
+  .side-text {
+    @apply text-xs text-gold-700;
+  }
 }
 
 @layer utilities {
