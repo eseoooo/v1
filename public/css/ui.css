@@ -54,6 +54,8 @@
 
 @layer utilities {
   #menu {
+    transition: translate 0.3s ease-out, display 0.3s ease-out,
+      overlay 0.3s ease-out;
     transition: translate 0.3s ease-out, display 0.3s ease-out allow-discrete,
       overlay 0.3s ease-out allow-discrete;
     translate: 100% 0;

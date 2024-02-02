@@ -17,7 +17,7 @@ export default function MobileNavLink({ name, href }) {
     <li className="w-4/5" onClick={handlerMenuClose}>
       <Link
         href={href}
-        className="p-5 inline-flex tracking-widest uppercase border-l border-dark-800 font-medium w-full"
+        className="p-5 inline-flex tracking-widest uppercase border-l border-dark-800 font-medium w-full hover:text-gold-700 hover:border-gold-700 duration-300 ease-out"
       >
         {name}
       </Link>
