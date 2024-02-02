@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -6,12 +8,16 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "480px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         raleway: ["var(--font-raleway)"],
-        sans: ["var(--font-pt-sans)"],
+        montserrat: ["var(--font-montserrat)"],
       },
-      height: {
+      spacing: {
         17.5: "4.375rem",
       },
       backgroundImage: {
@@ -20,10 +26,16 @@ module.exports = {
       fontSize: {
         "base-sm": "0.8125rem",
       },
+      borderWidth: {
+        0.5: "0.5px",
+      },
+      fontSize: {
+        "base-sm": "0.8125rem",
+      },
       colors: {
         // Accent color
         "gold-900": "#5e4a29",
-        "gold-800": "#93774c",
+        "gold-800": "#b5935c",
         "gold-700": "#fdce80",
         // dark for background and accents
         "dark-900": "#242329", // For bold typography on white background

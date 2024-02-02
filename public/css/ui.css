@@ -3,9 +3,46 @@
     @apply bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 leading-relaxed text-light-600 font-raleway box-border;
   }
 
+  section {
+    @apply py-20 md:py-24;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-balance tracking-tight mb-3;
+  }
+
+  h1,
+  h2 {
+    @apply text-4xl md:text-6xl lg:text-7xl font-semibold;
+  }
+
+  h1 {
+    @apply text-gold-700 mb-5;
+  }
+
+  h2 {
+    @apply text-gold-800;
+  }
+
+  /* h3 {
+    @apply text-lg sm:text-xl text-gold-800;
+  } */
+
+  p {
+    @apply mb-3 font-montserrat text-sm xs:text-base;
+  }
+
   [popover] {
     @apply m-0 text-inherit border-0;
   }
+}
+
+@layer components {
 }
 
 @layer utilities {
@@ -27,6 +64,14 @@
       &::backdrop {
         opacity: 1;
       }
+    }
+  }
+
+  .content-area {
+    height: calc(100dvh - theme(spacing.16));
+
+    @media (min-width: 1024px) {
+      height: calc(100dvh - theme(spacing[17.5]));
     }
   }
 }

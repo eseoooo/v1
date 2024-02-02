@@ -1,12 +1,11 @@
-import { Raleway, PT_Sans } from "next/font/google";
+import { Raleway, Montserrat } from "next/font/google";
 
 export const raleway = Raleway({
   subsets: ["latin"],
   variable: "--font-raleway",
 });
 
-export const pt_sans = PT_Sans({
-  weight: ["400", "700"],
+export const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-pt-sans",
+  variable: "--font-montserrat",
 });
