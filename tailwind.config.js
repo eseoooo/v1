@@ -23,13 +23,11 @@ module.exports = {
       backgroundImage: {
         "gradient-315": "linear-gradient(315deg, var(--tw-gradient-stops))",
       },
-      fontSize: {
-        "base-sm": "0.8125rem",
-      },
       borderWidth: {
         0.5: "0.5px",
       },
       fontSize: {
+        xxs: "0.625rem",
         "base-sm": "0.8125rem",
       },
       colors: {

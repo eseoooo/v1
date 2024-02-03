@@ -12,11 +12,13 @@ export default function NavBar() {
             <NavLink key={link.name} name={link.name} href={link.href} />
           ))}
         </ol>
+
+        {/* TODO: Add resume */}
         <button
           aria-label="menu"
           popovertarget="menu"
           type="button"
-          className="h-10 w-10 text-gold-700 md:hidden"
+          className="focused-link h-10 w-10 text-gold-700 md:hidden rotate-180"
         >
           <MenuIcon />
         </button>

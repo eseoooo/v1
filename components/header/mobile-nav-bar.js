@@ -16,6 +16,7 @@ export default function MobileNavBar() {
       menuElement.removeEventListener("toggle", handlerMenuToggle);
     };
   }, []);
+
   const handlerMenuToggle = (event) => {
     if (event.newState === "open") {
       setAriaHidden(false);
@@ -26,7 +27,7 @@ export default function MobileNavBar() {
 
   return (
     <nav
-      className="md:hidden px-6 py-12 sm:p-12 flex flex-col max-h-dvh h-dvh w-5/6 sm:w-2/3 bg-bg-gray-800 left-full"
+      className="focused-link md:hidden px-6 py-12 sm:p-12 flex flex-col max-h-dvh h-dvh w-5/6 sm:w-2/3 bg-bg-gray-800 left-full"
       popover="auto"
       role="menu"
       id="menu"
@@ -39,6 +40,8 @@ export default function MobileNavBar() {
           <MobileNavLink key={link.name} name={link.name} href={link.href} />
         ))}
       </ol>
+      {/* TODO: Add resume */}
+
       <div className="flex justify-end">
         <ButtonSolid
           type="button"
