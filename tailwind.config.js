@@ -29,6 +29,8 @@ module.exports = {
       fontSize: {
         xxs: "0.625rem",
         "base-sm": "0.8125rem",
+        "1.5xl": "1.375rem",
+        "8.5xl": "7rem",
       },
       colors: {
         // Accent color

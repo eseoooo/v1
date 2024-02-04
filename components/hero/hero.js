@@ -4,23 +4,23 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="h-full flex">
-      <div className="side-content hidden sm:flex flex-col h-full justify-between">
+    <section className="section-with-side-content h-full">
+      <div className="flex flex-col h-full justify-between">
         <p className="side-text">{heroContent.sideDescription}</p>
         <Link
           href="/#about"
-          aria-label="About"
+          aria-label="About me"
           className="focused-link text-gold-700 w-full motion-safe:animate-bounce"
         >
           <ArrowDownRightIcon />
         </Link>
       </div>
-      <div className="flex flex-col flex-1 h-full justify-end">
+      <div className="flex flex-col h-full justify-end">
         <h1 className="mb-3">
-          {heroContent.firstName} {heroContent.LastName}.
+          {heroContent.firstName} {heroContent.lastName}.
         </h1>
         <h2>{heroContent.title}.</h2>
-        <p className="max-w-xl">{heroContent.description}</p>
+        <p className="max-w-xl leading-relaxed">{heroContent.description}</p>
         {/* TODO: Add github link */}
       </div>
     </section>
