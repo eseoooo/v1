@@ -15,10 +15,12 @@ export default function About() {
         <p className="side-text md:hidden mt-16 lg:mt-20">Get to know me</p>
       </div>
       <div>
-        <HeadingDash>About me</HeadingDash>
+        <HeadingDash className="md:pl-[133px] lg:pl-[164px]">
+          About me
+        </HeadingDash>
         <div className="flex">
           <h1
-            className="hidden md:flex flex-col gap-y-2 text-8xl lg:text-8.5xl tracking-normal mr-10"
+            className="hidden md:flex flex-col gap-y-2 text-8xl lg:text-8.5xl tracking-normal mr-10 lg:mr-14"
             aria-label={`${yearsOfExperience} plus years of experience`}
           >
             <span className="flex">
