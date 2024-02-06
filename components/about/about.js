@@ -3,7 +3,6 @@ import HeadingDash from "@/components/ui/heading-dash";
 export default function About() {
   const yearsOfExperience = new Date().getFullYear() - 2021;
 
-  // TODO: Add sr-only sm:not-sr-only
   return (
     <section
       className="section-with-side-content"
@@ -51,8 +50,7 @@ export default function About() {
               into electronic typesetting, remaining essentially unchanged. It
               was popularised in the 1960s with the release of Letraset sheets
               containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
+              publishing software like Aldus PageMaker
             </p>
           </div>
         </div>

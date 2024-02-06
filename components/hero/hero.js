@@ -1,6 +1,7 @@
 import { heroContent } from "@/lib/const";
 import ArrowDownRightIcon from "@/public/icons/arrow-down-right-icon.svg";
 import Link from "next/link";
+import { parseMarkdownLinks } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -20,7 +21,9 @@ export default function Hero() {
           {heroContent.firstName} {heroContent.lastName}.
         </h1>
         <h2>{heroContent.title}.</h2>
-        <p className="max-w-xl leading-relaxed">{heroContent.description}</p>
+        <p className="max-w-xl leading-relaxed">
+          {parseMarkdownLinks(heroContent.description)}
+        </p>
         {/* TODO: Add github link */}
       </div>
     </section>
