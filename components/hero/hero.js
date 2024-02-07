@@ -4,10 +4,13 @@ import Link from "next/link";
 import { parseMarkdownLinks } from "@/lib/utils";
 
 export default function Hero() {
+  const { firstName, lastName, title, description, sideDescription } =
+    heroContent;
+
   return (
     <section className="section-with-side-content h-full">
       <div className="flex flex-col h-full justify-between">
-        <p className="side-text">{heroContent.sideDescription}</p>
+        <p className="side-text">{sideDescription}</p>
         <Link
           href="/#about"
           aria-label="About me"
@@ -16,14 +19,18 @@ export default function Hero() {
           <ArrowDownRightIcon />
         </Link>
       </div>
+
       <div className="flex flex-col h-full justify-end">
         <h1 className="mb-3">
-          {heroContent.firstName} {heroContent.lastName}.
+          {firstName} {lastName}.
         </h1>
-        <h2>{heroContent.title}.</h2>
-        <p className="max-w-xl leading-relaxed">
-          {parseMarkdownLinks(heroContent.description)}
-        </p>
+        <h2>{title}.</h2>
+        {description.length &&
+          description.map((text, index) => (
+            <p key={index} className="max-w-xl leading-relaxed">
+              {parseMarkdownLinks(text)}
+            </p>
+          ))}
         {/* TODO: Add github link */}
       </div>
     </section>
