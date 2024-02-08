@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <Header />
         <main
           id="content"
-          className="content-area mx-auto max-w-screen-2xl px-6 xs:px-12 lg:px-24 xl:px-40"
+          className="h-dvh pt-16 lg:pt-17.5 mx-auto max-w-screen-2xl px-6 xs:px-12 lg:px-24 xl:px-40"
         >
           {children}
         </main>

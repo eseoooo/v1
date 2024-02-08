@@ -2,7 +2,7 @@ import NavBar from "@/components/header/nav-bar";
 
 export default function Header() {
   return (
-    <header className="sticky top-0">
+    <header className="fixed z-20">
       <NavBar />
     </header>
   );

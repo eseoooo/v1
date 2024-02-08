@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply scrollbar bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-600 font-raleway box-border bg-fixed overflow-x-hidden overflow-y-auto;
+    @apply scrollbar bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-500 font-raleway box-border bg-fixed overflow-x-hidden overflow-y-auto;
   }
 
   section {
@@ -46,7 +46,7 @@
   }
 
   a {
-    @apply -z-10;
+    @apply z-10;
   }
 }
 
@@ -69,14 +69,6 @@
 }
 
 @layer utilities {
-  .content-area {
-    height: calc(100dvh - theme(spacing.16));
-
-    @media (min-width: 1024px) {
-      height: calc(100dvh - theme(spacing[17.5]));
-    }
-  }
-
   .section-with-side-content {
     display: grid;
     column-gap: 45px;
