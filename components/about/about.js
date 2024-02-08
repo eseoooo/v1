@@ -13,10 +13,10 @@ export default function About() {
       id="about"
     >
       <div>
-        <p className="side-text hidden md:block mt-16 lg:mt-20">
+        <p className="side-text hidden md:block mt-24 lg:mt-28">
           {sideDescription[0]}
         </p>
-        <p className="side-text md:hidden mt-16 lg:mt-20">
+        <p className="side-text md:hidden mt-24 lg:mt-28">
           {sideDescription[1]}
         </p>
       </div>

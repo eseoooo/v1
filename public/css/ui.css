@@ -1,6 +1,10 @@
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
   body {
-    @apply bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-600 font-raleway box-border bg-fixed;
+    @apply scrollbar bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-600 font-raleway box-border bg-fixed overflow-x-hidden overflow-y-auto;
   }
 
   section {
@@ -30,7 +34,7 @@
   }
 
   h3 {
-    @apply md:text-lg lg:text-1.5xl uppercase font-semibold tracking-widest;
+    @apply md:text-lg lg:text-1.5xl uppercase font-semibold tracking-widest mb-10;
   }
 
   p {
@@ -40,6 +44,10 @@
   [popover] {
     @apply m-0 text-inherit border-0;
   }
+
+  a {
+    @apply -z-10;
+  }
 }
 
 @layer components {
@@ -48,7 +56,7 @@
   }
 
   .focused-link {
-    @apply outline-none focus:outline-none focus-visible:outline-gold-700 focus-visible:outline-dashed;
+    @apply outline-none focus:outline-none focus-visible:outline-gold-700 focus-visible:outline-dashed focus-visible:-outline-offset-2;
   }
 
   .focused-button {
@@ -85,6 +93,16 @@
       @media (min-width: 640px) {
         display: flex;
       }
+    }
+  }
+
+  .scrollbar {
+    &::-webkit-scrollbar {
+      @apply w-1 h-1 bg-transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-light-700 rounded-xl;
     }
   }
 }
