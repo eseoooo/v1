@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     screens: {
       xs: "480px",
+      lgg: "1152px",
       ...defaultTheme.screens,
     },
     extend: {
@@ -25,6 +26,7 @@ module.exports = {
       },
       height: {
         120: "30rem",
+        150: "37.5rem",
       },
       backgroundImage: {
         "gradient-315": "linear-gradient(315deg, var(--tw-gradient-stops))",

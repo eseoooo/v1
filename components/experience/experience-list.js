@@ -1,7 +1,7 @@
 export default function ExperienceList() {
   const jobs = ["Kellton", "SkipTheDishes"];
   return (
-    <div className="flex justify-center mb-16">
+    <div className="flex justify-center mb-8">
       <menu
         aria-label="job list"
         className="scrollbar max-w-md sm:min-w-[448px] flex overflow-x-auto relative"
