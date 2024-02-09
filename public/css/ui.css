@@ -4,7 +4,7 @@
   }
 
   body {
-    @apply scrollbar bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-500 font-raleway box-border bg-fixed overflow-x-hidden overflow-y-auto;
+    @apply scrollbar bg-gradient-315 from-bg-gray-800 from-10% to-bg-gray-900 to-100% min-h-dvh overscroll-none m-0 p-0 text-light-600 font-raleway box-border bg-fixed overflow-x-hidden overflow-y-auto selection:text-bg-gray-900 selection:bg-light-500;
   }
 
   section {
@@ -35,6 +35,18 @@
 
   h3 {
     @apply md:text-lg lg:text-1.5xl uppercase font-semibold tracking-widest mb-10;
+  }
+
+  h4 {
+    @apply text-base md:text-lg tracking-widest font-medium text-slate-50;
+  }
+
+  h5 {
+    @apply text-sm md:text-base-base font-montserrat tracking-wider;
+  }
+
+  h6 {
+    @apply text-xxs md:text-xs font-montserrat tracking-wider;
   }
 
   p {

@@ -20,6 +20,12 @@ module.exports = {
       spacing: {
         17.5: "4.375rem",
       },
+      width: {
+        100: "25rem",
+      },
+      height: {
+        120: "30rem",
+      },
       backgroundImage: {
         "gradient-315": "linear-gradient(315deg, var(--tw-gradient-stops))",
       },
@@ -29,6 +35,7 @@ module.exports = {
       fontSize: {
         xxs: "0.625rem",
         "base-sm": "0.8125rem",
+        "base-base": "0.9375rem",
         "1.5xl": "1.375rem",
         "8.5xl": "7rem",
       },
