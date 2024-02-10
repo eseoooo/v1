@@ -7,7 +7,7 @@ export default function Experience() {
     <section id="experience" aria-label="where I've worked">
       <HeadingDash>where I&apos;ve worked</HeadingDash>
       <ExperienceList />
-      <div className="flex w-full gap-x-6 lgg:gap-x-10">
+      <div className="flex w-full flex-col  md:flex-row gap-x-6 lgg:gap-x-10">
         <JobTitlePanel />
 
         <p className="max-w-xl flex-1 flex items-end text-sm lgg:text-base-base leading-relaxed">
