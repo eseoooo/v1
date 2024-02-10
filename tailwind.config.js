@@ -20,11 +20,7 @@ module.exports = {
       },
       spacing: {
         17.5: "4.375rem",
-      },
-      width: {
         100: "25rem",
-      },
-      height: {
         120: "30rem",
         150: "37.5rem",
       },
