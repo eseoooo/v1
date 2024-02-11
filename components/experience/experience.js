@@ -11,7 +11,10 @@ export default function Experience() {
       <ExperienceList />
       <div className="flex w-full flex-col justify-center  md:flex-row gap-6 lgg:gap-x-10">
         <JobTitlePanel>
-          <TechnologiesUsedList className="max-w-72" />
+          <TechnologiesUsedList
+            technologies={["HTML", "CSS", "JavaScript"]}
+            className="max-w-72"
+          />
         </JobTitlePanel>
         <JobDescriptionPanel />
       </div>

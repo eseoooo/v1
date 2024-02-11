@@ -3,10 +3,15 @@ import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg
 export default function JobDescriptionPanel() {
   return (
     <div className="scrollbar h-full overflow-y-auto max-h-120 lgg:max-h-150">
-      <ul className="max-w-xl list-disc min-h-120 lgg:min-h-150 flex flex-col md:justify-end marker:text-transparent">
+      <ul
+        role="list"
+        className="max-w-xl list-disc min-h-120 lgg:min-h-150 flex flex-col md:justify-end marker:text-transparent"
+      >
         {Array.from({ length: 4 }, (_, index) => (
           <li
             key={index}
+            role="listitem"
+            aria-label="A job role"
             className="mb-3 ml-8 md:ml-4 pl-5 leading-loose relative"
           >
             <p className="mb-0 text-base-sm xs:text-sm">

@@ -3,6 +3,7 @@ export default function ExperienceList() {
   return (
     <div className="flex justify-center mb-8">
       <menu
+        role="toolbar"
         aria-label="job list"
         className="scrollbar max-w-md sm:min-w-[448px] flex overflow-x-auto relative"
       >
@@ -13,6 +14,7 @@ export default function ExperienceList() {
           >
             <button
               type="button"
+              aria-label={`Company Name: ${job}`}
               className="focused-link py-3 w-full font-medium text-base-base border-b-2 border-transparent hover:border-gold-700 hover:text-gold-700 hover:bg-gold-700/10 focus-visible:text-gold-700 focus-visible:bg-gold-700/10 duration-300 ease-out tracking-wider uppercase"
             >
               {job}
