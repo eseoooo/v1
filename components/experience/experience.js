@@ -2,6 +2,7 @@ import HeadingDash from "@/components/ui/heading-dash";
 import ExperienceList from "@/components/experience/experience-list";
 import JobTitlePanel from "@/components/experience/job-title-panel";
 import JobDescriptionPanel from "@/components/experience/job-description-panel";
+import TechnologiesUsedList from "@/components/shared/technologies-used-list";
 
 export default function Experience() {
   return (
@@ -9,7 +10,9 @@ export default function Experience() {
       <HeadingDash>where I&apos;ve worked</HeadingDash>
       <ExperienceList />
       <div className="flex w-full flex-col justify-center  md:flex-row gap-6 lgg:gap-x-10">
-        <JobTitlePanel />
+        <JobTitlePanel>
+          <TechnologiesUsedList className="max-w-72" />
+        </JobTitlePanel>
         <JobDescriptionPanel />
       </div>
     </section>

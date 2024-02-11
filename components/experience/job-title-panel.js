@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 
-export default function JobTitlePanel() {
+export default function JobTitlePanel({ children }) {
   const linkRef = useRef();
   const linkClickHandler = (event) => {
     linkRef.current.click();
@@ -34,6 +34,7 @@ export default function JobTitlePanel() {
           <h6 aria-label="May 2018 to Present" className="uppercase">
             May 2018 &nbsp;—&nbsp; Present
           </h6>
+          {children} {/* Technologies used */}
         </div>
       </div>
 
@@ -58,6 +59,7 @@ export default function JobTitlePanel() {
         <h6 aria-label="May 2018 to Present" className="uppercase">
           May 2018 &nbsp;—&nbsp; Present
         </h6>
+        {children} {/* Technologies used */}
       </div>
     </>
   );
