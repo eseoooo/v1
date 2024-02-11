@@ -10,7 +10,7 @@ export default function JobTitlePanel() {
   // TODO: Add link icon
   return (
     <>
-      <div className="hidden min-w-80 h-120 lgg:min-w-100 lgg:h-150 border border-dark-900 md:flex items-center justify-center">
+      <div className="hidden min-w-80 max-w-80 h-120 lgg:min-w-100 lgg:max-w-100 lgg:h-150 border border-dark-900 md:flex items-center justify-center">
         <div
           className="group w-[86%] h-[90%] p-5 rounded-sm flex flex-col justify-end bg-bg-gray-800 cursor-pointer  border border-transparent hover:border-gold-700 hover:bg-gold-700/5 motion-safe:duration-200 motion-safe:ease-out"
           onClick={linkClickHandler}
