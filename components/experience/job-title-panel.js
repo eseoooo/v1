@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRef } from "react";
+import AnimatedLinkIcon from "@/components/ui/animated-link-icon";
 
 export default function JobTitlePanel({ children }) {
   const linkRef = useRef();
@@ -24,14 +25,17 @@ export default function JobTitlePanel({ children }) {
               ref={linkRef}
             >
               <span className="mb-1 group-hover:text-gold-700 group-focus-visible/link:text-gold-700 motion-safe:duration-200 motion-safe:ease-out">
-                Front-end Developer (Intermediate)
+                Front-end Developer (Intermediate){" "}
               </span>
               <span className="text-light-600 group-hover:text-gold-800 group-focus-visible/link:text-gold-800 motion-safe:duration-200 motion-safe:ease-out">
-                Kellton
+                Kellton <AnimatedLinkIcon className="top-0.5" />
               </span>
             </Link>
           </h4>
-          <h6 aria-label="May 2018 to Present" className="uppercase">
+          <h6
+            aria-label="May 2018 to Present"
+            className="uppercase border-b border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
+          >
             May 2018 &nbsp;—&nbsp; Present
           </h6>
           {children} {/* Technologies used */}
@@ -52,11 +56,14 @@ export default function JobTitlePanel({ children }) {
               Front-end Developer (Intermediate)
             </span>
             <span className="text-light-600 group-hover:text-gold-800 group-focus-visible/link:text-gold-800 motion-safe:duration-200 motion-safe:ease-out">
-              Kellton
+              Kellton <AnimatedLinkIcon className="top-0.5" />
             </span>
           </Link>
         </h4>
-        <h6 aria-label="May 2018 to Present" className="uppercase">
+        <h6
+          aria-label="May 2018 to Present"
+          className="uppercase border-b border-dark-800 pb-4 max-w-72"
+        >
           May 2018 &nbsp;—&nbsp; Present
         </h6>
         {children} {/* Technologies used */}
