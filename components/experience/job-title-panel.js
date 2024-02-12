@@ -8,7 +8,7 @@ export default function JobTitlePanel({ children }) {
   const linkClickHandler = (event) => {
     linkRef.current.click();
   };
-  // TODO: Add link icon
+
   return (
     <>
       <div className="hidden min-w-80 max-w-80 h-120 lgg:min-w-100 lgg:max-w-100 lgg:h-150 border border-dark-900 md:flex items-center justify-center">
