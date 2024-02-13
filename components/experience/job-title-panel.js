@@ -18,7 +18,7 @@ export default function JobTitlePanel({ children }) {
         >
           <h4>
             <Link
-              className="focused-link group/link flex flex-col w-full text-pretty"
+              className="focused-link group/link flex flex-col w-full text-pretty text-slate-50"
               aria-label="Intermediate Front-end Developer at Kellton (opens in a new tab)"
               href="https://kellton.com/"
               target="_blank"
@@ -46,7 +46,7 @@ export default function JobTitlePanel({ children }) {
       <div className="md:hidden">
         <h4 className="group">
           <Link
-            className="focused-link group/link flex flex-col w-full text-pretty"
+            className="focused-link group/link flex flex-col w-full text-pretty text-slate-50"
             aria-label="Intermediate Front-end Developer at Kellton (opens in a new tab)"
             href="https://kellton.com/"
             target="_blank"

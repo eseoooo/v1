@@ -30,6 +30,9 @@ module.exports = {
       borderWidth: {
         0.5: "0.5px",
       },
+      transitionDuration: {
+        400: "400ms",
+      },
       fontSize: {
         xxs: "0.625rem",
         "base-sm": "0.8125rem",

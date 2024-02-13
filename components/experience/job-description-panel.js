@@ -12,9 +12,9 @@ export default function JobDescriptionPanel() {
             key={index}
             role="listitem"
             aria-label="A job role"
-            className="mb-3 ml-8 md:ml-4 pl-5 leading-loose relative"
+            className="mb-3 ml-8 md:ml-4 pl-5 relative"
           >
-            <p className="mb-0 text-base-sm xs:text-sm">
+            <p className="mb-0 sub-text leading-normal">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut

@@ -1,5 +1,6 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import AsteriskIcon from "@/public/icons/asterisk-icon.svg";
+import ProjectItem from "@/components/projects/project-item";
 
 export default function Projects() {
   return (
@@ -15,6 +16,10 @@ export default function Projects() {
       </div>
       <div>
         <HeadingDash>Things I&apos;ve built</HeadingDash>
+        <div className="max-w-3xl pt-3">
+          <ProjectItem name="project-item" />
+          <ProjectItem name="project-item" />
+        </div>
       </div>
 
       {/* <ProjectList /> */}

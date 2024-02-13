@@ -38,7 +38,7 @@
   }
 
   h4 {
-    @apply text-base md:text-lg tracking-widest font-medium text-slate-50;
+    @apply text-base md:text-lg tracking-widest font-medium;
   }
 
   h5 {
@@ -77,6 +77,10 @@
 
   .link {
     @apply outline-none focus:outline-none text-gold-700 relative no-underline after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-[1px] after:bg-gold-700 after:duration-200 after:ease-out hover:after:w-full focus-visible:after:w-full;
+  }
+
+  .sub-text {
+    @apply font-montserrat  text-base-sm xs:text-sm;
   }
 }
 
