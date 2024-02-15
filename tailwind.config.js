@@ -31,6 +31,7 @@ module.exports = {
         0.5: "0.5px",
       },
       transitionDuration: {
+        250: "250ms",
         400: "400ms",
       },
       fontSize: {

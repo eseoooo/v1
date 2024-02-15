@@ -1,0 +1,7 @@
+@layer utilities {
+  .project-title {
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-export default function HeadingDash({ children, className }) {
+export default function HeadingDash({ children, className = "" }) {
   return (
     <h3 className={`w-full flex items-center ${className}`}>
       {children}

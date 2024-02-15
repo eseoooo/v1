@@ -3,12 +3,13 @@ export default function ExperienceList() {
   return (
     <div className="flex justify-center mb-8">
       <menu
-        role="toolbar"
+        role="menubar"
         aria-label="job list"
         className="scrollbar max-w-md sm:min-w-[448px] flex overflow-x-auto relative"
       >
         {jobs.map((job, index) => (
           <li
+            role="menuitem"
             key={index}
             className="border-b w-full min-w-40 border-dark-800 mb-2 font-montserrat"
           >

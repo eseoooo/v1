@@ -19,6 +19,7 @@ export default function Projects() {
         <div className="max-w-3xl pt-3">
           <ProjectItem name="project-item" />
           <ProjectItem name="project-item" />
+          <ProjectItem name="project-item" />
         </div>
       </div>
 
