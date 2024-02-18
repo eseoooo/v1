@@ -4,7 +4,6 @@ import ProjectLink from "@/components/projects/project-link";
 
 export default function ProjectDetails({ detailClickHandler }) {
   const keydownHandler = (event) => {
-    console.log(event.key);
     if (event.key !== "Enter" && event.key !== " ") return;
     detailClickHandler();
   };
