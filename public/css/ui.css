@@ -80,7 +80,7 @@
   }
 
   .sub-text {
-    @apply font-montserrat  text-base-sm xs:text-sm;
+    @apply font-montserrat text-base-sm xs:text-sm;
   }
 }
 
@@ -95,12 +95,12 @@
     @media (min-width: 1024px) {
       column-gap: 112px;
     }
+  }
 
-    & div:first-child {
-      display: none;
-      @media (min-width: 640px) {
-        display: flex;
-      }
+  .section-side-content {
+    display: none;
+    @media (min-width: 640px) {
+      display: flex;
     }
   }
 

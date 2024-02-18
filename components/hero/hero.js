@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="section-with-side-content h-full">
-      <div className="flex flex-col h-full justify-between">
+      <div className="section-side-content flex flex-col h-full justify-between">
         <p className="side-text">{sideDescription}</p>
         <Link
           href="/#about"

@@ -2,6 +2,8 @@
 import { useState } from "react";
 import PlusIcon from "@/public/icons/plus-icon.svg";
 import MinusIcon from "@/public/icons/minus-icon.svg";
+import Image from "next/image";
+import TechnologiesUsedList from "@/components/shared/technologies-used-list";
 
 export default function ProjectItem({ name }) {
   const [open, setOpen] = useState(false);
@@ -20,15 +22,17 @@ export default function ProjectItem({ name }) {
     });
   };
 
+  // todo accessibility for expand/collapse
+
   return (
     <details
       name={name}
       open={open}
       onToggle={detailToggleHandler}
-      className="group focused-link border-t border-b border-dark-800 cursor-pointer max-h-24 overflow-hidden open:max-h-120 hover:border-t-gold-700 motion-safe:duration-300 motion-safe:ease-out"
+      className="group focused-link border-t border-b border-dark-800 cursor-pointer max-h-24 overflow-hidden open:max-h-150 hover:border-t-gold-700 motion-safe:duration-300 motion-safe:ease-out"
     >
       <summary
-        className="group/link list-none project-title focused-link py-6 md:py-7 flex justify-between"
+        className="group/link  project-title focused-link py-6 md:py-7 flex justify-between"
         aria-label="Product Development"
       >
         <h4 className="inline-flex mb-0">Product Development</h4>
@@ -43,20 +47,46 @@ export default function ProjectItem({ name }) {
           </span>
         )}
       </summary>
-      <p
-        onClick={detailClickHandler}
-        className="sub-text leading-normal py-6 md:pb-7"
-      >
-        rem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the standard dummy text ever since the 1500s, when
-        an unknown printer took a galley of type and scrambled it to make a type
-        specimen book. It has survived not only five centuries, but also the
-        leap into electronic typesetting, remaining essentially unchanged. It
-        was popularised in the 1960s with the release of Letraset sheets
-        containing Lorem Ipsum passages, and more recently with desktop
-        publishing software like Aldus PageMaker including versions of Lorem
-        Ipsum.
-      </p>
+      <div onClick={detailClickHandler} className="pb-6 md:pb-7 flex gap-x-4">
+        <div className="hidden relative md:block flex-1 max-h-24 min-w-36 mt-1">
+          <Image
+            src="/images/pexels-bri-schneiter-346529.jpg"
+            alt="project image"
+            fill
+            className="object-cover rounded border-2 border-dark-800"
+          />
+        </div>
+        <div className="flex flex-col gap-y-3 max-w-xl">
+          <p className="sub-text leading-normal">
+            rem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the standard dummy text ever since
+            the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only
+            five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It
+          </p>
+          <TechnologiesUsedList
+            showHeader={false}
+            technologies={[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "HTML",
+            ]}
+          />
+          <div className="md:hidden relative block h-28 w-44">
+            <Image
+              src="/images/pexels-bri-schneiter-346529.jpg"
+              alt="project image"
+              fill
+              className="object-cover rounded border-2 border-dark-800"
+            />
+          </div>
+        </div>
+      </div>
     </details>
   );
 }

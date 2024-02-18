@@ -9,7 +9,7 @@ export default function Projects() {
       id="projects"
       aria-label="Things I've built"
     >
-      <div>
+      <div className="section-side-content">
         <div className="flex justify-end pt-0.5 h-6 lg:h-7 w-full text-gold-700">
           <AsteriskIcon />
         </div>
