@@ -11,7 +11,7 @@ export default function ProjectLink({ name, href }) {
         aria-label="Product Development Github Repo (opens in a new tab)"
         className="focused-link hover:text-gold-700 focus-visible:text-gold-700 duration-300 motion-safe:ease-out h-5 w-5 pt-1"
       >
-        <GitHubIcon />
+        <GitHubIcon aria-hidden />
       </Link>
       <Link
         href="https://kellton.com/"

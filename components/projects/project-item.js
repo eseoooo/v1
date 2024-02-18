@@ -19,7 +19,6 @@ export default function ProjectItem({ name }) {
       setOpen((prevState) => !prevState);
     });
   };
-  // todo accessibility for expand/collapse
 
   return (
     <details

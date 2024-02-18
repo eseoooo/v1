@@ -3,16 +3,27 @@ import TechnologiesUsedList from "@/components/shared/technologies-used-list";
 import ProjectLink from "@/components/projects/project-link";
 
 export default function ProjectDetails({ detailClickHandler }) {
+  const keydownHandler = (event) => {
+    console.log(event.key);
+    if (event.key !== "Enter" && event.key !== " ") return;
+    detailClickHandler();
+  };
+
   return (
     <div
+      tabIndex="0"
+      role="button"
       onClick={detailClickHandler}
-      className="pb-6 md:pb-7 flex gap-x-4 lg:gap-x-8"
+      onKeyDown={keydownHandler}
+      aria-label="Project details expanded (click to collapse)"
+      className="focused-link !-outline-offset-2  pb-6 md:pb-7 flex gap-x-4 lg:gap-x-8"
     >
       <div className="hidden relative md:block flex-1 max-h-24 min-w-36 mt-1">
         <Image
           src="/images/pexels-bri-schneiter-346529.jpg"
           alt="project image"
           fill
+          sizes="150w"
           className="object-cover rounded border-2 border-dark-800"
         />
       </div>
@@ -46,6 +57,7 @@ export default function ProjectDetails({ detailClickHandler }) {
             src="/images/pexels-bri-schneiter-346529.jpg"
             alt="project image"
             fill
+            sizes="180w"
             className="object-cover rounded border-2 border-dark-800"
           />
         </div>
