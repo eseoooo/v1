@@ -7,7 +7,7 @@ import TechnologiesUsedList from "@/components/shared/technologies-used-list";
 export default function Experience() {
   return (
     <section id="experience" aria-label="where I've worked">
-      <HeadingDash>where I&apos;ve worked</HeadingDash>
+      <HeadingDash aria-hidden>where I&apos;ve worked</HeadingDash>
       <ExperienceList />
       <div className="flex w-full flex-col justify-center  md:flex-row gap-6 lgg:gap-x-10">
         <JobTitlePanel>

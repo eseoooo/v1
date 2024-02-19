@@ -12,13 +12,13 @@ export default function Projects() {
       <div className="section-side-content">
         <div
           aria-hidden
-          className="flex justify-end pt-0.5 h-6 lg:h-7 w-full text-gold-700"
+          className="flex justify-end pt-0.5 h-6 lg:h-7 w-full text-gold-700 "
         >
           <AsteriskIcon />
         </div>
       </div>
       <div>
-        <HeadingDash>Things I&apos;ve built</HeadingDash>
+        <HeadingDash aria-hidden>Things I&apos;ve built</HeadingDash>
         <div className="max-w-3xl pt-3">
           <ProjectItem name="project-item" />
           <ProjectItem name="project-item" />

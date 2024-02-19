@@ -56,10 +56,6 @@
   [popover] {
     @apply m-0 text-inherit border-0;
   }
-
-  a {
-    @apply z-10;
-  }
 }
 
 @layer components {

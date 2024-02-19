@@ -22,7 +22,7 @@ export default function About() {
       </div>
 
       <div>
-        <HeadingDash className="md:pl-[133px] lg:pl-[204px]">
+        <HeadingDash aria-hidden className="md:pl-[133px] lg:pl-[204px]">
           About me
         </HeadingDash>
         <div className="flex">
