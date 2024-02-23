@@ -63,6 +63,10 @@
     @apply text-xs text-gold-700 sr-only sm:not-sr-only;
   }
 
+  .active-nav-link {
+    @apply text-gold-700 bg-gold-700/10 !border-b-gold-700;
+  }
+
   .focused-link {
     @apply outline-none focus:outline-none focus-visible:outline-gold-700 focus-visible:outline-dashed focus-visible:-outline-offset-2;
   }

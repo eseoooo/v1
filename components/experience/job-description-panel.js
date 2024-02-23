@@ -5,7 +5,7 @@ export default function JobDescriptionPanel() {
     <div className="scrollbar h-full overflow-y-auto max-h-120 lgg:max-h-150">
       <ul
         role="list"
-        className="max-w-xl list-disc min-h-120 lgg:min-h-150 flex flex-col md:justify-end marker:text-transparent"
+        className="max-w-xl list-disc md:min-h-120 lgg:min-h-150 flex flex-col md:justify-end marker:text-transparent"
       >
         {Array.from({ length: 4 }, (_, index) => (
           <li
