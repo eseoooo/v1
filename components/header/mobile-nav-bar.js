@@ -37,7 +37,13 @@ export default function MobileNavBar() {
     >
       <ol className="flex flex-col flex-1 justify-center items-center">
         {navLinks.map((link) => (
-          <MobileNavLink key={link.name} name={link.name} href={link.href} />
+          <MobileNavLink
+            key={link.name}
+            name={link.name}
+            href={link.href}
+            aria-hidden={ariaHidden}
+            tabIndex={ariaHidden ? -1 : 1}
+          />
         ))}
       </ol>
       {/* TODO: Add resume */}
@@ -47,6 +53,8 @@ export default function MobileNavBar() {
           type="button"
           popovertarget="menu"
           popovertargetaction="hide"
+          aria-hidden={ariaHidden}
+          tabIndex={ariaHidden ? -1 : 1}
         >
           Close
         </ButtonSolid>

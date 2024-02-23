@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 let menu;
-export default function MobileNavLink({ name, href }) {
+export default function MobileNavLink({ name, href, ...otherProps }) {
   useEffect(() => {
     menu = document.getElementById("menu");
   }, []);
@@ -16,6 +16,7 @@ export default function MobileNavLink({ name, href }) {
   return (
     <li className="w-4/5" onClick={handleMenuClose}>
       <Link
+        {...otherProps}
         href={href}
         className="focused-link p-5 inline-flex tracking-widest uppercase border-l border-dark-800 font-medium w-full hover:text-gold-700 hover:border-gold-700 hover:bg-gold-700/10
         focus-visible:text-gold-700 focus-visible:bg-gold-700/10 duration-300 ease-out"
