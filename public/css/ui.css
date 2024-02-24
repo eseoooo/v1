@@ -38,7 +38,7 @@
   }
 
   h4 {
-    @apply text-base md:text-lg tracking-widest font-medium;
+    @apply text-base-base md:text-base tracking-widest font-medium;
   }
 
   h5 {

@@ -12,7 +12,7 @@ export default function About() {
       aria-label="About me"
       id="about"
     >
-      <div className="section-side-content">
+      <div aria-hidden className="section-side-content">
         <p className="side-text hidden md:block mt-24 lg:mt-28">
           {sideDescription[0]}
         </p>
