@@ -1,5 +1,6 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import TextField from "@/components/contact/text-field";
+import TextArea from "@/components/contact/text-area";
 
 export default function Contact() {
   return (
@@ -43,6 +44,15 @@ export default function Contact() {
               required
               aria-required
               aria-label="Your subject"
+            />
+            <TextArea
+              name="message"
+              placeholder="Message"
+              otherStyles="scrollbar w-full resize-none"
+              rows="8"
+              required
+              aria-required
+              aria-label="Your message"
             />
           </div>
         </form>
