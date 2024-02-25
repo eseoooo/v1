@@ -4,6 +4,8 @@ import TextArea from "@/components/contact/text-area";
 import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg";
 
 export default function Contact() {
+  // TODO: Add validation on blur? and bottom text
+
   return (
     <section
       id="contact"
@@ -24,10 +26,10 @@ export default function Contact() {
               name="name"
               placeholder="Your name"
               otherStyles="w-full md:flex-1"
-              minLength="3"
-              required
               aria-required
+              aria-invalid="false"
               aria-label="Your name"
+              errorMessage="Please provide a valid name"
             />
             <TextField
               type="email"
@@ -35,26 +37,28 @@ export default function Contact() {
               placeholder="Your email"
               otherStyles="w-full md:flex-1"
               inputMode="email"
-              required
               aria-required
+              aria-invalid="false"
               aria-label="Your email"
+              errorMessage="Please provide a valid email address."
             />
             <TextField
               type="text"
               name="subject"
               placeholder="Subject"
               otherStyles="w-full"
-              required
               aria-required
+              aria-invalid="false"
               aria-label="Your subject"
+              errorMessage="Subject is required."
             />
             <TextArea
               name="message"
               placeholder="Message"
               otherStyles="scrollbar w-full resize-none"
               rows="6"
-              required
               aria-required
+              aria-invalid="false"
               aria-label="Your message"
             />
           </div>
