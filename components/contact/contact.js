@@ -1,6 +1,7 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import TextField from "@/components/contact/text-field";
 import TextArea from "@/components/contact/text-area";
+import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg";
 
 export default function Contact() {
   return (
@@ -16,13 +17,14 @@ export default function Contact() {
       </div>
       <div>
         <HeadingDash aria-hidden>Get in touch</HeadingDash>
-        <form>
+        <form className="flex flex-col md:flex-row">
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
             <TextField
               type="text"
               name="name"
               placeholder="Your name"
               otherStyles="w-full md:flex-1"
+              minLength="3"
               required
               aria-required
               aria-label="Your name"
@@ -32,6 +34,7 @@ export default function Contact() {
               name="email"
               placeholder="Your email"
               otherStyles="w-full md:flex-1"
+              inputMode="email"
               required
               aria-required
               aria-label="Your email"
@@ -49,11 +52,23 @@ export default function Contact() {
               name="message"
               placeholder="Message"
               otherStyles="scrollbar w-full resize-none"
-              rows="8"
+              rows="6"
               required
               aria-required
               aria-label="Your message"
             />
+          </div>
+          <div className="flex-1 flex items-end justify-end">
+            <button
+              type="submit"
+              className="flex gap-x-2 items-center text-1.5xl xs:text-2xl px-6 py-4 translate-y-5 font-medium tracking-wide hover:text-gold-700  duration-300 ease-out"
+              aria-label="Send message"
+            >
+              Send{" "}
+              <span aria-hidden className="inline-flex h-5 w-5 ">
+                <ChevronDoubleRightIcon />
+              </span>
+            </button>
           </div>
         </form>
       </div>
