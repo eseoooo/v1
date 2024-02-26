@@ -19,7 +19,7 @@ export default function Contact() {
       </div>
       <div>
         <HeadingDash aria-hidden>Get in touch</HeadingDash>
-        <form className="flex flex-col md:flex-row">
+        <form className="flex flex-col md:flex-row gap-x-6">
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
             <TextField
               type="text"
@@ -55,17 +55,18 @@ export default function Contact() {
             <TextArea
               name="message"
               placeholder="Message"
-              otherStyles="scrollbar w-full resize-none"
+              otherStyles=" w-full "
               rows="6"
               aria-required
               aria-invalid="false"
               aria-label="Your message"
+              errorMessage="Message is required."
             />
           </div>
-          <div className="flex-1 flex items-end justify-end">
+          <div className="flex items-end justify-end">
             <button
               type="submit"
-              className="flex gap-x-2 items-center text-1.5xl xs:text-2xl px-6 py-4 translate-y-5 font-medium tracking-wide hover:text-gold-700  duration-300 ease-out"
+              className="flex gap-x-2 items-center text-1.5xl xs:text-2xl px-6 py-4 translate-y-4 font-medium tracking-wide hover:text-gold-700  duration-300 ease-out"
               aria-label="Send message"
             >
               Send{" "}
