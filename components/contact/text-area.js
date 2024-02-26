@@ -25,7 +25,7 @@ export default function TextArea({
         name={name}
         onFocus={triggerInvalidState}
         onBlur={triggerValidState}
-        className={`sub-text scrollbar outline-none w-full tracking-wide font-montserrat mt-3 pb-6 bg-transparent border-b border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out resize-none leading-relaxed invalid:text-red-500 invalid:placeholder:text-red-500 invalid:border-red-500 invalid:focus:border-red-500 invalid:hover:border-red-500`}
+        className={`sub-text scrollbar peer outline-none w-full tracking-wide font-montserrat mt-3 pb-6 bg-transparent border-b border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out resize-none leading-relaxed invalid:text-red-500 invalid:placeholder:text-red-500 invalid:border-red-500 invalid:focus:border-red-500 invalid:hover:border-red-500`}
         {...otherProps}
         ref={textareaRef}
       />
