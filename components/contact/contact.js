@@ -2,6 +2,7 @@ import HeadingDash from "@/components/ui/heading-dash";
 import TextField from "@/components/contact/text-field";
 import TextArea from "@/components/contact/text-area";
 import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg";
+import { sendContactForm } from "@/lib/actions";
 
 export default function Contact() {
   // TODO: Add validation on blur? and bottom text
@@ -19,7 +20,10 @@ export default function Contact() {
       </div>
       <div>
         <HeadingDash aria-hidden>Get in touch</HeadingDash>
-        <form className="flex flex-col md:flex-row gap-x-6">
+        <form
+          action={sendContactForm}
+          className="flex flex-col md:flex-row gap-x-6"
+        >
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
             <TextField
               type="text"
