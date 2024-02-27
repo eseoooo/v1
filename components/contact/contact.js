@@ -1,11 +1,25 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import TextField from "@/components/contact/text-field";
 import TextArea from "@/components/contact/text-area";
-import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg";
+import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 
 export default function Contact() {
   // TODO: Add validation on blur? and bottom text
+
+  const nameValidationHandler = (name) => {
+    const nameRegex = /^[a-zA-Z\s]*$/; // Regular expression to match letters and spaces
+
+    if (name.trim() === "") {
+      return "Please provide a valid name";
+    } else if (!name.match(nameRegex)) {
+      return "Name can only contain letters and spaces";
+    } else if (name.length < 3) {
+      return "Please lengthen this text to at least 3 characters";
+    } else {
+      return;
+    }
+  };
 
   return (
     <section
@@ -59,7 +73,7 @@ export default function Contact() {
             <TextArea
               name="message"
               placeholder="Message"
-              otherStyles=" w-full "
+              otherStyles=" w-full"
               rows="6"
               aria-required
               aria-invalid="false"
@@ -68,16 +82,7 @@ export default function Contact() {
             />
           </div>
           <div className="flex items-end justify-end">
-            <button
-              type="submit"
-              className="flex gap-x-2 items-center text-1.5xl xs:text-2xl px-6 py-4 translate-y-4 font-medium tracking-wide hover:text-gold-700  duration-300 ease-out"
-              aria-label="Send message"
-            >
-              Send{" "}
-              <span aria-hidden className="inline-flex h-5 w-5 ">
-                <ChevronDoubleRightIcon />
-              </span>
-            </button>
+            <ContactSubmitButton />
           </div>
         </form>
       </div>
