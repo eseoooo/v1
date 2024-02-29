@@ -14,7 +14,7 @@ export default function TechnologiesUsedList({
         {technologies.map((technology, index) => (
           <li
             key={index}
-            className="text-xs font-montserrat text-gold-700 bg-gold-700/10 px-3 py-1.5 rounded-3xl"
+            className="text-xs font-montserrat text-gold-700 bg-gold-700/10 px-3 py-1.5 rounded-3xl font-light"
           >
             {technology}
           </li>

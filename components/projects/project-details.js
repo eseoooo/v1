@@ -15,7 +15,7 @@ export default function ProjectDetails({ detailClickHandler }) {
       onClick={detailClickHandler}
       onKeyDown={keydownHandler}
       aria-label="Project details expanded (click to collapse)"
-      className="focused-link !-outline-offset-2  pb-6 md:pb-7 flex gap-x-4 lg:gap-x-8"
+      className="focused-link !-outline-offset-2 px-4 md:px-6 pb-6 md:pb-7 flex gap-x-4 lg:gap-x-6"
     >
       <div className="hidden relative md:block flex-1 max-h-24 min-w-36 mt-1">
         <Image
@@ -23,7 +23,7 @@ export default function ProjectDetails({ detailClickHandler }) {
           alt="project image"
           fill
           sizes="150w"
-          className="object-cover rounded border-2 border-dark-800"
+          className="object-cover rounded border-0.5 border-dark-800"
         />
       </div>
       <div className="flex flex-col gap-y-3 max-w-xl">
@@ -51,13 +51,13 @@ export default function ProjectDetails({ detailClickHandler }) {
           <ProjectLink />
         </div>
 
-        <div className="md:hidden relative block h-28 w-44 mt-2">
+        <div className="md:hidden relative block h-24 w-40 mt-2">
           <Image
             src="/images/pexels-bri-schneiter-346529.jpg"
             alt="project image"
             fill
             sizes="180w"
-            className="object-cover rounded border-2 border-dark-800"
+            className="object-cover rounded border-0.5 border-dark-800"
           />
         </div>
         <div className="md:hidden block">

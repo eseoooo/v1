@@ -11,9 +11,9 @@ export default function JobTitlePanel({ children }) {
 
   return (
     <>
-      <div className="hidden min-w-80 max-w-80 h-120 lgg:min-w-100 lgg:max-w-100 lgg:h-150 border border-dark-900 md:flex items-center justify-center">
+      <div className="hidden rounded-sm min-w-80 max-w-80 h-120 lgg:min-w-100 lgg:max-w-100 lgg:h-150 border-0.5 border-dark-900 md:flex items-center justify-center">
         <div
-          className="group w-[86%] h-[90%] p-5 rounded-sm flex flex-col justify-end bg-bg-gray-800 cursor-pointer  border border-transparent hover:border-gold-700 hover:bg-gold-700/5 motion-safe:duration-200 motion-safe:ease-out"
+          className="group w-[93%] h-[96%] p-5 rounded-sm flex flex-col justify-end bg-bg-gray-800 cursor-pointer  border-0.5 border-transparent hover:border-gold-700 hover:bg-gold-700/5 motion-safe:duration-200 motion-safe:ease-out"
           onClick={linkClickHandler}
         >
           <h4>
@@ -34,7 +34,7 @@ export default function JobTitlePanel({ children }) {
           </h4>
           <h6
             aria-label="May 2018 to Present"
-            className="uppercase border-b border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
+            className="uppercase border-b-0.5 border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
           >
             May 2018 &nbsp;—&nbsp; Present
           </h6>
@@ -62,7 +62,7 @@ export default function JobTitlePanel({ children }) {
         </h4>
         <h6
           aria-label="May 2018 to Present"
-          className="uppercase border-b border-dark-800 pb-4 max-w-72"
+          className="uppercase border-b-0.5 border-dark-800 pb-4 max-w-72"
         >
           May 2018 &nbsp;—&nbsp; Present
         </h6>

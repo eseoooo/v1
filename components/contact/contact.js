@@ -5,21 +5,7 @@ import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 
 export default function Contact() {
-  // TODO: Add validation on blur? and bottom text
-
-  const nameValidationHandler = (name) => {
-    const nameRegex = /^[a-zA-Z\s]*$/; // Regular expression to match letters and spaces
-
-    if (name.trim() === "") {
-      return "Please provide a valid name";
-    } else if (!name.match(nameRegex)) {
-      return "Name can only contain letters and spaces";
-    } else if (name.length < 3) {
-      return "Please lengthen this text to at least 3 characters";
-    } else {
-      return;
-    }
-  };
+  // TODO: Add validation on blur, disabled, and aria-invalid="true"
 
   return (
     <section
@@ -47,7 +33,6 @@ export default function Contact() {
               aria-required
               aria-invalid="false"
               aria-label="Your name"
-              errorMessage="Please provide a valid name"
             />
             <TextField
               type="email"
@@ -58,7 +43,6 @@ export default function Contact() {
               aria-required
               aria-invalid="false"
               aria-label="Your email"
-              errorMessage="Please provide a valid email address."
             />
             <TextField
               type="text"
@@ -68,7 +52,6 @@ export default function Contact() {
               aria-required
               aria-invalid="false"
               aria-label="Your subject"
-              errorMessage="Subject is required."
             />
             <TextArea
               name="message"
@@ -78,11 +61,10 @@ export default function Contact() {
               aria-required
               aria-invalid="false"
               aria-label="Your message"
-              errorMessage="Message is required."
             />
           </div>
           <div className="flex items-end justify-end">
-            <ContactSubmitButton />
+            <ContactSubmitButton disabled={false} />
           </div>
         </form>
       </div>

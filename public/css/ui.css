@@ -22,7 +22,7 @@
 
   h1,
   h2 {
-    @apply text-4xl md:text-6xl lg:text-7xl font-semibold;
+    @apply text-4xl md:text-6xl lg:text-7xl font-medium;
   }
 
   h1 {
@@ -34,7 +34,7 @@
   }
 
   h3 {
-    @apply md:text-lg lg:text-1.5xl uppercase font-semibold tracking-widest mb-10;
+    @apply md:text-lg lg:text-1.5xl uppercase font-medium tracking-widest mb-10;
   }
 
   h4 {
@@ -46,11 +46,11 @@
   }
 
   h6 {
-    @apply text-xxs md:text-xs font-montserrat tracking-wider;
+    @apply text-xxs md:text-xs font-montserrat tracking-wider font-light;
   }
 
   p {
-    @apply mb-3 font-montserrat text-sm xs:text-base;
+    @apply mb-3 font-montserrat text-sm xs:text-base-base font-light;
   }
 
   [popover] {
@@ -80,7 +80,7 @@
   }
 
   .sub-text {
-    @apply font-montserrat text-base-sm xs:text-sm;
+    @apply font-montserrat text-base-sm xs:text-[0.84375rem] font-light;
   }
 }
 
