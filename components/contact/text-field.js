@@ -46,6 +46,7 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
     if (error) {
       setErrorMessage(error);
       triggerInvalidState();
+      event.target.blur();
     } else {
       setErrorMessage(null);
       triggerValidState();
@@ -66,7 +67,7 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
       <p
         role="alert"
         aria-live="assertive"
-        className="hidden peer-invalid:block motion-safe:duration-300 motion-safe:ease-out text-red-500 text-xs absolute top-full pt-3"
+        className="hidden peer-invalid:block motion-safe:duration-300 motion-safe:ease-out text-red-500 text-[0.65625rem] xs:text-xs absolute top-full pt-3"
       >
         {errorMessage}
       </p>
