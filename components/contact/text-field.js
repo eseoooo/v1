@@ -19,7 +19,7 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
     if (name.trim() === "") {
       return "This field is required";
     }
-    if (name.length < minLength) {
+    if (name.trimStart().trimEnd().length < minLength) {
       return `Please lengthen this text to at least ${minLength} characters`;
     }
     return null;
@@ -58,6 +58,7 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
         type={type}
         name={name}
         onBlur={inputBlurHandler}
+        aria-invalid={errorMessage ? "true" : "false"}
         className={`peer sub-text w-full outline-none tracking-wide font-montserrat font-light py-5 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out invalid:text-red-500 invalid:placeholder:text-red-500 invalid:border-red-500 invalid:focus:border-red-500 invalid:hover:border-red-500`}
         {...otherProps}
         ref={inputRef}

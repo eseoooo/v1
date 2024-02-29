@@ -5,7 +5,7 @@ import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 
 export default function Contact() {
-  // TODO: Add validation on blur, disabled, and aria-invalid="true"
+  // TODO: fix blue and disabled
 
   return (
     <section
@@ -31,7 +31,6 @@ export default function Contact() {
               placeholder="Your name"
               otherStyles="w-full md:flex-1"
               aria-required
-              aria-invalid="false"
               aria-label="Your name"
             />
             <TextField
@@ -41,7 +40,6 @@ export default function Contact() {
               otherStyles="w-full md:flex-1"
               inputMode="email"
               aria-required
-              aria-invalid="false"
               aria-label="Your email"
             />
             <TextField
@@ -50,7 +48,6 @@ export default function Contact() {
               placeholder="Subject"
               otherStyles="w-full"
               aria-required
-              aria-invalid="false"
               aria-label="Your subject"
             />
             <TextArea
@@ -59,7 +56,6 @@ export default function Contact() {
               otherStyles=" w-full"
               rows="6"
               aria-required
-              aria-invalid="false"
               aria-label="Your message"
             />
           </div>
