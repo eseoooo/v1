@@ -5,7 +5,7 @@ import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 
 export default function Contact() {
-  // TODO: fix blur and disabled and form status
+  // TODO: disabled and form status
 
   return (
     <section
@@ -22,7 +22,8 @@ export default function Contact() {
         <HeadingDash aria-hidden>Get in touch</HeadingDash>
         <form
           action={sendContactForm}
-          className="flex flex-col md:flex-row gap-6"
+          id="contact-form"
+          className="flex flex-col md:flex-row gap-y-6"
         >
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
             <TextField
@@ -59,7 +60,7 @@ export default function Contact() {
               aria-label="Your message"
             />
           </div>
-          <div className="flex items-end justify-end">
+          <div className="flex items-end justify-end min-w-48">
             <ContactSubmitButton disabled={false} />
           </div>
         </form>

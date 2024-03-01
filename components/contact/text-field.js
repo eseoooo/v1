@@ -1,43 +1,16 @@
 "use client";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import { validateText, validateEmail } from "@/lib/utils";
 
 export default function TextField({ name, type, otherStyles, ...otherProps }) {
   const [errorMessage, setErrorMessage] = useState(null);
-  const inputRef = useRef();
+  const [inputHasBeenBlurred, setInputHasBeenBlurred] = useState(false);
 
-  const triggerValidState = () => {
-    inputRef.current.setCustomValidity("");
-    inputRef.current.reportValidity();
-  };
-
-  const triggerInvalidState = () => {
-    inputRef.current.setCustomValidity(" ");
-    inputRef.current.reportValidity();
-  };
-
-  const validateName = (name, minLength = 3) => {
-    if (name.trim() === "") {
-      return "This field is required";
-    }
-    if (name.trimStart().trimEnd().length < minLength) {
-      return `Please lengthen this text to at least ${minLength} characters`;
-    }
-    return null;
-  };
-
-  const validateEmail = (email) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!email.match(emailRegex) || email.trim() === "") {
-      return "Please provide a valid email";
-    }
-    return null;
-  };
-
-  const inputBlurHandler = (event) => {
+  const validateInput = (event) => {
     let error = null;
+
     if (event.target.getAttribute("type") === "text") {
-      error = validateName(event.target.value);
+      error = validateText(event.target.value);
     }
     if (event.target.getAttribute("type") === "email") {
       error = validateEmail(event.target.value);
@@ -45,12 +18,18 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
 
     if (error) {
       setErrorMessage(error);
-      triggerInvalidState();
-      event.target.blur();
     } else {
       setErrorMessage(null);
-      triggerValidState();
     }
+  };
+
+  const inputBlurHandler = (event) => {
+    setInputHasBeenBlurred(true);
+    validateInput(event);
+  };
+
+  const inputChangeHandler = (event) => {
+    if (inputHasBeenBlurred) validateInput(event);
   };
 
   return (
@@ -59,15 +38,21 @@ export default function TextField({ name, type, otherStyles, ...otherProps }) {
         type={type}
         name={name}
         onBlur={inputBlurHandler}
+        onChange={inputChangeHandler}
         aria-invalid={errorMessage ? "true" : "false"}
-        className={`peer sub-text w-full outline-none tracking-wide font-montserrat font-light py-5 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out invalid:text-red-500 invalid:placeholder:text-red-500 invalid:border-red-500 invalid:focus:border-red-500 invalid:hover:border-red-500`}
+        className={`sub-text w-full outline-none tracking-wide font-montserrat font-light py-5 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out ${
+          errorMessage
+            ? "text-red-500 placeholder:text-red-500 border-red-500 focus:border-red-500 hover:border-red-500"
+            : ""
+        }`}
         {...otherProps}
-        ref={inputRef}
       />
       <p
         role="alert"
         aria-live="assertive"
-        className="hidden peer-invalid:block motion-safe:duration-300 motion-safe:ease-out text-red-500 text-[0.65625rem] xs:text-xs absolute top-full pt-3"
+        className={`${
+          errorMessage ? "block" : "hidden"
+        } motion-safe:duration-300 motion-safe:ease-out text-red-500 text-[0.65625rem] xs:text-xs absolute top-full pt-3`}
       >
         {errorMessage}
       </p>
