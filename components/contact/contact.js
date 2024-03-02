@@ -1,11 +1,20 @@
+"use client";
+
 import HeadingDash from "@/components/ui/heading-dash";
 import TextField from "@/components/contact/text-field";
 import TextArea from "@/components/contact/text-area";
 import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
+import { useState } from "react";
 
 export default function Contact() {
   // TODO: disabled and form status
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [formIsValid, setFormIsValid] = useState(false);
 
   return (
     <section
@@ -29,39 +38,39 @@ export default function Contact() {
             <TextField
               type="text"
               name="name"
-              placeholder="Your name"
+              placeholder="Your name *"
               otherStyles="w-full md:flex-1"
               aria-required
-              aria-label="Your name"
+              onChange={setName}
             />
             <TextField
               type="email"
               name="email"
-              placeholder="Your email"
+              placeholder="Your email *"
               otherStyles="w-full md:flex-1"
               inputMode="email"
               aria-required
-              aria-label="Your email"
+              onChange={setEmail}
             />
             <TextField
               type="text"
               name="subject"
-              placeholder="Subject"
+              placeholder="Subject *"
               otherStyles="w-full"
               aria-required
-              aria-label="Your subject"
+              onChange={setSubject}
             />
             <TextArea
               name="message"
-              placeholder="Message"
-              otherStyles=" w-full"
+              placeholder="Message *"
+              otherStyles=" w-full mt-7"
               rows="6"
               aria-required
-              aria-label="Your message"
+              onChange={setMessage}
             />
           </div>
           <div className="flex items-end justify-end min-w-48">
-            <ContactSubmitButton disabled={false} />
+            <ContactSubmitButton disabled={!formIsValid} />
           </div>
         </form>
       </div>

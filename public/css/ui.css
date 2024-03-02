@@ -50,7 +50,7 @@
   }
 
   p {
-    @apply mb-3 font-montserrat text-sm xs:text-base-base font-light;
+    @apply mb-3 font-montserrat text-sm xs:text-base-base;
   }
 
   [popover] {
@@ -80,7 +80,7 @@
   }
 
   .sub-text {
-    @apply font-montserrat text-base-sm xs:text-[0.84375rem] font-light;
+    @apply font-montserrat text-xs xs:text-base-sm;
   }
 }
 
