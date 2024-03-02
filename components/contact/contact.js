@@ -6,15 +6,35 @@ import TextArea from "@/components/contact/text-area";
 import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 import { useState } from "react";
+import { validateText, validateEmail } from "@/lib/utils";
 
 export default function Contact() {
-  // TODO: disabled and form status
+  // TODO: Add form status
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const NAME_MAX_LENGTH = 50;
+  const NAME_MIN_LENGTH = 3;
+  const MESSAGE_MAX_LENGTH = 600;
+  const MESSAGE_MIN_LENGTH = 10;
+
+  const validateForm = () => {
+    const error =
+      validateText(name, NAME_MIN_LENGTH, NAME_MAX_LENGTH) ||
+      validateEmail(email) ||
+      validateText(subject, NAME_MIN_LENGTH, NAME_MAX_LENGTH) ||
+      validateText(message, MESSAGE_MIN_LENGTH, MESSAGE_MAX_LENGTH);
+
+    if (!error) {
+      setFormIsValid(true);
+    } else {
+      setFormIsValid(false);
+    }
+  };
 
   return (
     <section
@@ -32,6 +52,7 @@ export default function Contact() {
         <form
           action={sendContactForm}
           id="contact-form"
+          onKeyUp={validateForm}
           className="flex flex-col md:flex-row gap-y-6"
         >
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
@@ -41,6 +62,8 @@ export default function Contact() {
               placeholder="Your name *"
               otherStyles="w-full md:flex-1"
               aria-required
+              maxLength={NAME_MAX_LENGTH}
+              minLength={NAME_MIN_LENGTH}
               onChange={setName}
             />
             <TextField
@@ -57,6 +80,8 @@ export default function Contact() {
               name="subject"
               placeholder="Subject *"
               otherStyles="w-full"
+              maxLength={NAME_MAX_LENGTH}
+              minLength={NAME_MIN_LENGTH}
               aria-required
               onChange={setSubject}
             />
@@ -65,6 +90,8 @@ export default function Contact() {
               placeholder="Message *"
               otherStyles=" w-full mt-7"
               rows="6"
+              maxLength={MESSAGE_MAX_LENGTH}
+              minLength={MESSAGE_MIN_LENGTH}
               aria-required
               onChange={setMessage}
             />

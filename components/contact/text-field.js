@@ -7,18 +7,20 @@ export default function TextField({
   type,
   onChange = () => {},
   otherStyles,
+  maxLength = 50,
+  minLength = 3,
   placeholder = "",
   ...otherProps
 }) {
   const [errorMessage, setErrorMessage] = useState(null);
-  const [inputHasBeenBlurred, setInputHasBeenBlurred] = useState(false);
+  const [inputHasBeenTouched, setInputHasBeenTouched] = useState(false);
   const [hasInput, setHasInput] = useState(false);
 
   const validateInput = (event) => {
     let error = null;
 
     if (event.target.getAttribute("type") === "text") {
-      error = validateText(event.target.value);
+      error = validateText(event.target.value, minLength, maxLength);
     }
     if (event.target.getAttribute("type") === "email") {
       error = validateEmail(event.target.value);
@@ -32,12 +34,12 @@ export default function TextField({
   };
 
   const inputBlurHandler = (event) => {
-    setInputHasBeenBlurred(true);
+    setInputHasBeenTouched(true);
     validateInput(event);
   };
 
   const inputChangeHandler = (event) => {
-    if (inputHasBeenBlurred) validateInput(event);
+    if (inputHasBeenTouched) validateInput(event);
     onChange(event.target.value);
     setHasInput(event.target.value.trim().length > 0);
   };
@@ -51,6 +53,7 @@ export default function TextField({
         placeholder={placeholder}
         onBlur={inputBlurHandler}
         onChange={inputChangeHandler}
+        onKeyUp={inputBlurHandler}
         aria-invalid={errorMessage ? "true" : "false"}
         className={`sub-text peer/input w-full outline-none tracking-wide font-montserrat font-light py-5 mt-2 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:placeholder:opacity-0 focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out autofill:bg-transparent ${
           errorMessage
