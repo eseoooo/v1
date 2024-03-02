@@ -55,7 +55,7 @@ export default function TextArea({
       />
       <label
         htmlFor={name}
-        className={`absolute block opacity-100 mb-0 -top-3 translate-y-1/2 peer-focus/input:-translate-y-full peer-focus/input:text-xs peer-focus/input:opacity-100 motion-safe:duration-200 motion-safe:ease-out font-montserrat tracking-wide font-medium text-base-base md:text-base ${
+        className={`absolute block opacity-0 mb-0 -top-3 translate-y-1/2 peer-focus/input:-translate-y-full peer-focus/input:text-xs peer-focus/input:opacity-100 motion-safe:duration-200 motion-safe:ease-out font-montserrat tracking-wide font-medium text-base-base md:text-base ${
           characterCount > 0 ? "-translate-y-full !text-xs opacity-100" : ""
         } ${errorMessage ? "text-red-500" : ""}`}
       >
