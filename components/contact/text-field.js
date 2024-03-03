@@ -53,7 +53,6 @@ export default function TextField({
         placeholder={placeholder}
         onBlur={inputBlurHandler}
         onChange={inputChangeHandler}
-        onKeyUp={inputBlurHandler}
         aria-invalid={errorMessage ? "true" : "false"}
         className={`sub-text peer/input w-full outline-none tracking-wide font-montserrat font-light py-5 mt-2 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:placeholder:opacity-0 focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out autofill:bg-transparent ${
           errorMessage

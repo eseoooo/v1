@@ -43,7 +43,6 @@ export default function TextArea({
         id={name}
         onBlur={blurHandler}
         onChange={changeHandler}
-        onKeyUp={blurHandler}
         placeholder={placeholder}
         aria-invalid={errorMessage ? "true" : "false"}
         className={`sub-text peer/input scrollbar outline-none w-full tracking-wide font-montserrat font-light pb-6 pr-6 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:placeholder:opacity-0 focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out resize-none leading-relaxed autofill:bg-transparent ${
@@ -56,7 +55,7 @@ export default function TextArea({
       <label
         htmlFor={name}
         className={`absolute block opacity-0 mb-0 -top-3 translate-y-1/2 peer-focus/input:-translate-y-full peer-focus/input:text-xs peer-focus/input:opacity-100 motion-safe:duration-200 motion-safe:ease-out font-montserrat tracking-wide font-medium text-base-base md:text-base ${
-          characterCount > 0 ? "-translate-y-full !text-xs opacity-100" : ""
+          characterCount > 0 ? "!-translate-y-full !text-xs opacity-100" : ""
         } ${errorMessage ? "text-red-500" : ""}`}
       >
         {placeholder}
