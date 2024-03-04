@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="fixed z-20">
       <NavBar />
-      <Notification message="Something went wrong " status="success" />
+      <Notification />
     </header>
   );
 }

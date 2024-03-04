@@ -5,8 +5,9 @@ import TextField from "@/components/contact/text-field";
 import TextArea from "@/components/contact/text-area";
 import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { validateText, validateEmail } from "@/lib/utils";
+import { NotificationContext } from "@/lib/context/notification-context";
 
 export default function Contact() {
   // TODO: Add form status
@@ -16,6 +17,12 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
+
+  // const {
+  //   setShowNotification,
+  //   setMessage: setMessageNotification,
+  //   setStatus,
+  // } = useContext(NotificationContext);
 
   const NAME_MAX_LENGTH = 50;
   const NAME_MIN_LENGTH = 3;
