@@ -59,6 +59,11 @@ module.exports = {
         // Main background
         "bg-gray-900": "#08080a",
         "bg-gray-800": "#151418",
+        //notification
+        "notification-green-900": "#16544f",
+        "notification-green-800": "#3ebdbd",
+        "notification-red-900": "#481b21",
+        "notification-red-800": "#ff7b7a",
       },
     },
   },
