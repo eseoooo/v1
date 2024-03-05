@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { validateText, validateEmail } from "@/lib/utils";
 
 export default function TextField({
   name,
   type,
+  initialError = "",
   onChange = () => {},
   otherStyles,
   maxLength = 50,
@@ -12,9 +13,16 @@ export default function TextField({
   placeholder = "",
   ...otherProps
 }) {
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
   const [inputHasBeenTouched, setInputHasBeenTouched] = useState(false);
   const [hasInput, setHasInput] = useState(false);
+
+  useEffect(() => {
+    if (initialError) {
+      setErrorMessage(initialError);
+      setInputHasBeenTouched(true);
+    }
+  }, [initialError]);
 
   const validateInput = (event) => {
     let error = null;

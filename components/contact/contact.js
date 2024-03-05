@@ -6,6 +6,7 @@ import TextArea from "@/components/contact/text-area";
 import ContactSubmitButton from "@/components/contact/contact-submit-button";
 import { sendContactForm } from "@/lib/actions";
 import { useState, useContext, useEffect } from "react";
+import { useFormState } from "react-dom";
 import { validateText, validateEmail } from "@/lib/utils";
 import { NotificationContext } from "@/lib/context/notification-context";
 
@@ -18,11 +19,13 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [formIsValid, setFormIsValid] = useState(false);
 
-  // const {
-  //   setShowNotification,
-  //   setMessage: setMessageNotification,
-  //   setStatus,
-  // } = useContext(NotificationContext);
+  const {
+    setShowNotification,
+    setMessage: setMessageNotification,
+    setStatus,
+  } = useContext(NotificationContext);
+
+  const [state, formAction] = useFormState(sendContactForm, {});
 
   const NAME_MAX_LENGTH = 50;
   const NAME_MIN_LENGTH = 3;
@@ -57,7 +60,7 @@ export default function Contact() {
       <div>
         <HeadingDash aria-hidden>Get in touch</HeadingDash>
         <form
-          action={sendContactForm}
+          action={formAction}
           id="contact-form"
           onKeyUp={validateForm}
           className="flex flex-col md:flex-row gap-y-6"
@@ -72,6 +75,7 @@ export default function Contact() {
               maxLength={NAME_MAX_LENGTH}
               minLength={NAME_MIN_LENGTH}
               onChange={setName}
+              initialError={state?.nameError}
             />
             <TextField
               type="email"
@@ -81,6 +85,7 @@ export default function Contact() {
               inputMode="email"
               aria-required
               onChange={setEmail}
+              initialError={state?.emailError}
             />
             <TextField
               type="text"
@@ -91,6 +96,7 @@ export default function Contact() {
               minLength={NAME_MIN_LENGTH}
               aria-required
               onChange={setSubject}
+              initialError={state?.subjectError}
             />
             <TextArea
               name="message"
@@ -101,6 +107,7 @@ export default function Contact() {
               minLength={MESSAGE_MIN_LENGTH}
               aria-required
               onChange={setMessage}
+              initialError={state?.messageError}
             />
           </div>
           <div className="flex items-end justify-end min-w-48">

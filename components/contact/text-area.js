@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { validateText } from "@/lib/utils";
 
 export default function TextArea({
   name,
   otherStyles,
   placeholder = "",
+  initialError = "",
   maxLength,
   minLength,
   onChange = () => {},
@@ -13,7 +14,14 @@ export default function TextArea({
 }) {
   const [errorMessage, setErrorMessage] = useState(null);
   const [characterCount, setCharacterCount] = useState(0);
-  const [inputHasBeenBlurred, setInputHasBeenBlurred] = useState(false);
+  const [inputHasBeenTouched, setInputHasBeenTouched] = useState(false);
+
+  useEffect(() => {
+    if (initialError) {
+      setErrorMessage(initialError);
+      setInputHasBeenTouched(true);
+    }
+  }, [initialError]);
 
   const validateInput = (event) => {
     const error = validateText(event.target.value, minLength, maxLength);
@@ -26,12 +34,12 @@ export default function TextArea({
   };
 
   const blurHandler = (event) => {
-    setInputHasBeenBlurred(true);
+    setInputHasBeenTouched(true);
     validateInput(event);
   };
 
   const changeHandler = (event) => {
-    if (inputHasBeenBlurred) validateInput(event);
+    if (inputHasBeenTouched) validateInput(event);
     setCharacterCount(event.target.value.trimStart().trimEnd().length);
     onChange(event.target.value);
   };
