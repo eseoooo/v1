@@ -11,8 +11,6 @@ import { validateText, validateEmail } from "@/lib/utils";
 import { NotificationContext } from "@/lib/context/notification-context";
 
 export default function Contact() {
-  // TODO: Add form status
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -27,6 +25,28 @@ export default function Contact() {
 
   const [state, formAction] = useFormState(sendContactForm, {});
 
+  // Show notification when form is submitted successfully or not
+  const submitted = state?.submitted;
+  const errorType = state?.errorType;
+  useEffect(() => {
+    if (submitted && !errorType) {
+      setShowNotification(true);
+      setMessageNotification(state?.message);
+      setStatus("success");
+    }
+    if (!submitted && errorType === "other") {
+      setShowNotification(true);
+      setMessageNotification(state?.message);
+      setStatus("failure");
+    }
+
+    return () => {
+      setShowNotification(false);
+      setMessageNotification("");
+    };
+  }, [submitted, errorType]);
+
+  // enable submit button only if all fields are valid
   const NAME_MAX_LENGTH = 50;
   const NAME_MIN_LENGTH = 3;
   const MESSAGE_MAX_LENGTH = 600;
