@@ -26,25 +26,18 @@ export default function Contact() {
   const [state, formAction] = useFormState(sendContactForm, {});
 
   // Show notification when form is submitted successfully or not
-  const submitted = state?.submitted;
-  const errorType = state?.errorType;
   useEffect(() => {
-    if (submitted && !errorType) {
+    if (state?.submitted && !state?.errorType) {
       setShowNotification(true);
       setMessageNotification(state?.message);
       setStatus("success");
     }
-    if (!submitted && errorType === "other") {
+    if (!state?.submitted && state?.errorType === "other") {
       setShowNotification(true);
       setMessageNotification(state?.message);
       setStatus("failure");
     }
-
-    return () => {
-      setShowNotification(false);
-      setMessageNotification("");
-    };
-  }, [submitted, errorType]);
+  }, [state, setShowNotification, setMessageNotification, setStatus]);
 
   // enable submit button only if all fields are valid
   const NAME_MAX_LENGTH = 50;

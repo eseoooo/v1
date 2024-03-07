@@ -3,9 +3,11 @@ import Notification from "@/components/header/notification";
 
 export default function Header() {
   return (
-    <header className="fixed z-20">
-      <NavBar />
+    <>
+      <header className="fixed z-30">
+        <NavBar />
+      </header>
       <Notification />
-    </header>
+    </>
   );
 }
