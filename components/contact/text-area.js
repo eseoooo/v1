@@ -53,7 +53,7 @@ export default function TextArea({
         onChange={changeHandler}
         placeholder={placeholder}
         aria-invalid={errorMessage ? "true" : "false"}
-        className={`sub-text peer/input scrollbar outline-none w-full tracking-wide font-montserrat font-light pb-6 pr-6 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:placeholder:opacity-0 focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out resize-none leading-relaxed autofill:bg-transparent ${
+        className={`peer/input scrollbar outline-none w-full tracking-wide font-montserrat font-light pb-6 pr-6 bg-transparent border-b-0.5 border-dark-800 placeholder:font-montserrat placeholder:tracking-wide placeholder:font-medium placeholder:text-base-base placeholder:md:text-base focus:placeholder:opacity-0 focus:border-gold-700 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out resize-none leading-relaxed autofill:bg-transparent ${
           errorMessage
             ? "text-red-500 placeholder:text-red-500 border-red-500 focus:border-red-500 hover:border-red-500"
             : ""
