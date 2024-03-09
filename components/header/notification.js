@@ -5,6 +5,7 @@ import XCircleIcon from "@/public/icons/x-circle-icon.svg";
 import { useContext, useEffect } from "react";
 import { NotificationContext } from "@/lib/context/notification-context";
 export default function Notification() {
+  const TIME_TO_SHOW_NOTIFICATION_IN_SECONDS = 4;
   const {
     showNotification,
     setShowNotification,
@@ -14,8 +15,7 @@ export default function Notification() {
     setStatus,
   } = useContext(NotificationContext);
 
-  // set show notification to false after 5 seconds and clear timer
-
+  // set show notification to false clear timer
   useEffect(() => {
     let resetNotification;
     if (showNotification) {
@@ -23,7 +23,7 @@ export default function Notification() {
         setShowNotification(false);
         setStatus("");
         setMessage("");
-      }, 4000);
+      }, TIME_TO_SHOW_NOTIFICATION_IN_SECONDS * 1000);
     }
 
     return () => {

@@ -15,6 +15,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [numberOfSubmissions, setNumberOfSubmissions] = useState(0);
   const [formIsValid, setFormIsValid] = useState(false);
 
   const {
@@ -31,6 +32,14 @@ export default function Contact() {
       setShowNotification(true);
       setMessageNotification(state?.message);
       setStatus("success");
+      setNumberOfSubmissions((prevState) => prevState + 1);
+
+      // reset form
+      setName("");
+      setEmail("");
+      setSubject("");
+      setMessage("");
+      setFormIsValid(false);
     }
     if (!state?.submitted && state?.errorType === "other") {
       setShowNotification(true);
@@ -77,6 +86,7 @@ export default function Contact() {
           id="contact-form"
           onKeyUp={validateForm}
           className="flex flex-col md:flex-row gap-y-6"
+          key={numberOfSubmissions} // force re-mount when form is submitted to reset input state
         >
           <div className="max-w-xl flex flex-wrap gap-x-6 gap-y-6 md:gap-y-10">
             <TextField
@@ -89,6 +99,7 @@ export default function Contact() {
               minLength={NAME_MIN_LENGTH}
               onChange={setName}
               initialError={state?.nameError}
+              value={name}
             />
             <TextField
               type="email"
@@ -99,6 +110,7 @@ export default function Contact() {
               aria-required
               onChange={setEmail}
               initialError={state?.emailError}
+              value={email}
             />
             <TextField
               type="text"
@@ -110,6 +122,7 @@ export default function Contact() {
               aria-required
               onChange={setSubject}
               initialError={state?.subjectError}
+              value={subject}
             />
             <TextArea
               name="message"
@@ -121,6 +134,7 @@ export default function Contact() {
               aria-required
               onChange={setMessage}
               initialError={state?.messageError}
+              value={message}
             />
           </div>
           <div className="flex items-end justify-end min-w-48">
