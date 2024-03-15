@@ -1,19 +1,14 @@
-import { navLinks } from "@/lib/const";
-import NavLink from "@/components/header/nav-link";
 import MobileNavBar from "@/components/header/mobile-nav-bar";
 import MenuIcon from "@/public/icons/menu-icon.svg";
 import HomeLink from "@/components/header/home-link";
+import NavLinks from "@/components/header/nav-links";
 
 export default function NavBar() {
   return (
     <>
       <nav className="h-16 lg:h-17.5 w-lvw border-b border-dark-800 text-sm px-6 md:px-12 backdrop-blur-lg flex justify-between items-center">
         <HomeLink />
-        <ol className="hidden md:flex h-full justify-end items-center gap-x-2">
-          {navLinks.map((link) => (
-            <NavLink key={link.name} name={link.name} href={link.href} />
-          ))}
-        </ol>
+        <NavLinks />
 
         {/* TODO: Add resume */}
         <button

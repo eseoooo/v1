@@ -9,7 +9,7 @@ export default function NotFound() {
     >
       <div className="max-w-xl w-full flex flex-col items-center gap-y-6">
         <NotFoundImage />
-        <Link className="button-outline focused-button py-3" href="/">
+        <Link className="button-outline focused-button" href="/">
           Go Home
         </Link>
       </div>

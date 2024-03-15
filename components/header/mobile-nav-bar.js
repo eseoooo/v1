@@ -2,7 +2,8 @@
 import { navLinks } from "@/lib/const";
 import MobileNavLink from "@/components/header/mobile-nav-link";
 import ButtonSolid from "@/components/ui/button-solid";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
+import { FeatureContext } from "@/lib/context/feature-context";
 
 export default function MobileNavBar() {
   const [ariaHidden, setAriaHidden] = useState(true);
@@ -16,6 +17,15 @@ export default function MobileNavBar() {
       menuElement.removeEventListener("toggle", handlerMenuToggle);
     };
   }, []);
+
+  const { contactFormIsEnabled } = useContext(FeatureContext);
+
+  const filteredNavLinks = navLinks.filter((link) => {
+    if (!contactFormIsEnabled) {
+      return link.name.toLowerCase() !== "contact";
+    }
+    return link;
+  });
 
   const handlerMenuToggle = (event) => {
     if (event.newState === "open") {
@@ -36,7 +46,7 @@ export default function MobileNavBar() {
       tabIndex={ariaHidden ? -1 : 1}
     >
       <ol className="flex flex-col flex-1 justify-center items-center">
-        {navLinks.map((link) => (
+        {filteredNavLinks.map((link) => (
           <MobileNavLink
             key={link.name}
             name={link.name}
