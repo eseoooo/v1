@@ -95,6 +95,7 @@ export default function Contact() {
               <TextField
                 type="text"
                 name="name"
+                autoComplete="name"
                 placeholder="Your name *"
                 otherStyles="w-full md:flex-1"
                 aria-required
@@ -107,6 +108,7 @@ export default function Contact() {
               <TextField
                 type="email"
                 name="email"
+                autoComplete="email"
                 placeholder="Your email *"
                 otherStyles="w-full md:flex-1"
                 inputMode="email"

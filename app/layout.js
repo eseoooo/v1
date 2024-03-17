@@ -51,7 +51,7 @@ export default function RootLayout({ children }) {
             <main
               id="content"
               tabIndex={-1}
-              className="h-dvh pt-16 lg:pt-17.5 mx-auto max-w-screen-2xl px-6 xs:px-12 lg:px-24 xl:px-40 outline-none"
+              className="h-dvh pt-16 lg:pt-17.5 mx-auto max-w-screen-2xl px-4 xs:px-12 lg:px-24 xl:px-40 outline-none"
             >
               {children}
             </main>

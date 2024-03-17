@@ -4,12 +4,12 @@ import Experience from "@/components/experience/experience";
 import Projects from "@/components/projects/projects";
 import Contact from "@/components/contact/contact";
 
-export default function Home() {
+export default function Home({ searchParams }) {
   return (
     <>
       <Hero />
       <About />
-      <Experience />
+      <Experience searchParams={searchParams} />
       <Projects />
       <Contact />
     </>
