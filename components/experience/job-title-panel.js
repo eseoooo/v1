@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import AnimatedLinkIcon from "@/components/ui/animated-link-icon";
 
-export default function JobTitlePanel({ children }) {
+export default function JobTitlePanel({ children, duration, title, company }) {
   const linkRef = useRef();
   const linkClickHandler = (event) => {
     linkRef.current.click();
@@ -25,10 +25,10 @@ export default function JobTitlePanel({ children }) {
               ref={linkRef}
             >
               <span className="mb-1 group-hover:text-gold-700 group-focus-visible/link:text-gold-700 motion-safe:duration-200 motion-safe:ease-out">
-                Front-end Developer (Intermediate){" "}
+                {title}
               </span>
               <span className="text-light-600 group-hover:text-gold-800 group-focus-visible/link:text-gold-800 motion-safe:duration-200 motion-safe:ease-out">
-                Kellton <AnimatedLinkIcon className="top-0.5" />
+                {company} <AnimatedLinkIcon className="top-0.5" />
               </span>
             </Link>
           </h4>
@@ -36,7 +36,7 @@ export default function JobTitlePanel({ children }) {
             aria-label="May 2018 to Present"
             className="uppercase border-b-0.5 border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
           >
-            May 2018 &nbsp;—&nbsp; Present
+            {duration.from} &nbsp;—&nbsp; {duration.to}
           </h6>
           {children} {/* Technologies used */}
         </div>
@@ -53,10 +53,10 @@ export default function JobTitlePanel({ children }) {
             ref={linkRef}
           >
             <span className="mb-1 group-hover:text-gold-700 group-focus-visible/link:text-gold-700 motion-safe:duration-200 motion-safe:ease-out">
-              Front-end Developer (Intermediate)
+              {title}
             </span>
             <span className="text-light-600 group-hover:text-gold-800 group-focus-visible/link:text-gold-800 motion-safe:duration-200 motion-safe:ease-out">
-              Kellton <AnimatedLinkIcon className="top-0.5" />
+              {company} <AnimatedLinkIcon className="top-0.5" />
             </span>
           </Link>
         </h4>
@@ -64,7 +64,7 @@ export default function JobTitlePanel({ children }) {
           aria-label="May 2018 to Present"
           className="uppercase border-b-0.5 border-dark-800 pb-4 max-w-72"
         >
-          May 2018 &nbsp;—&nbsp; Present
+          {duration.from} &nbsp;—&nbsp; {duration.to}
         </h6>
         {children} {/* Technologies used */}
       </div>

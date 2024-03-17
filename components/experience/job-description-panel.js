@@ -1,13 +1,14 @@
 import ChevronDoubleRightIcon from "@/public/icons/chevron-double-right-icon.svg";
+import { parseMarkdownLinks } from "@/lib/utils";
 
-export default function JobDescriptionPanel() {
+export default function JobDescriptionPanel({ descriptions }) {
   return (
     <div className="scrollbar h-full overflow-y-auto max-h-120 lgg:max-h-150">
       <ul
         role="list"
         className="max-w-xl list-disc md:min-h-120 lgg:min-h-150 flex flex-col md:justify-end marker:text-transparent"
       >
-        {Array.from({ length: 4 }, (_, index) => (
+        {descriptions.map((description, index) => (
           <li
             key={index}
             role="listitem"
@@ -15,10 +16,7 @@ export default function JobDescriptionPanel() {
             className="mb-3 ml-8 md:ml-4 pl-5 relative"
           >
             <p className="mb-0 sub-text leading-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim
+              {parseMarkdownLinks(description)}
             </p>
             <div
               aria-hidden="true"

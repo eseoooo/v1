@@ -2,21 +2,20 @@
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
-export default function ExperienceList() {
+export default function ExperienceList({ jobs }) {
   const QUERY = "job_id";
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const jobList = jobs.map((job) => job.company);
 
   useEffect(() => {
     if (!searchParams.has(QUERY)) {
       setActiveIndex(0);
     }
   }, [searchParams]);
-
-  const jobs = ["Kellton", "SkipTheDishes", "BestEgg", "Covac"]; // import list and use id
 
   const createQueryString = useCallback(
     (name, value) => {
@@ -46,7 +45,7 @@ export default function ExperienceList() {
         aria-label="job list"
         className="scrollbar max-w-md sm:min-w-[448px] flex overflow-x-auto relative"
       >
-        {jobs.map((job, index) => (
+        {jobList.map((job, index) => (
           <li
             role="menuitem"
             key={index}
