@@ -3,7 +3,13 @@ import Link from "next/link";
 import { useRef } from "react";
 import AnimatedLinkIcon from "@/components/ui/animated-link-icon";
 
-export default function JobTitlePanel({ children, duration, title, company }) {
+export default function JobTitlePanel({
+  children,
+  duration,
+  title,
+  company,
+  url,
+}) {
   const linkRef = useRef();
   const linkClickHandler = (event) => {
     linkRef.current.click();
@@ -19,8 +25,8 @@ export default function JobTitlePanel({ children, duration, title, company }) {
           <h4>
             <Link
               className="focused-link group/link flex flex-col w-full text-pretty text-slate-50"
-              aria-label="Intermediate Front-end Developer at Kellton (opens in a new tab)"
-              href="https://kellton.com/"
+              aria-label={`${title} at ${company} (opens in a new tab)`}
+              href={url}
               target="_blank"
               ref={linkRef}
             >
@@ -33,7 +39,7 @@ export default function JobTitlePanel({ children, duration, title, company }) {
             </Link>
           </h4>
           <h6
-            aria-label="May 2018 to Present"
+            aria-label={`${duration.from} to ${duration.to}`}
             className="uppercase border-b-0.5 border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
           >
             {duration.from} &nbsp;—&nbsp; {duration.to}
@@ -47,8 +53,8 @@ export default function JobTitlePanel({ children, duration, title, company }) {
         <h4 className="group">
           <Link
             className="focused-link group/link flex flex-col w-full text-pretty text-slate-50"
-            aria-label="Intermediate Front-end Developer at Kellton (opens in a new tab)"
-            href="https://kellton.com/"
+            aria-label={`${title} at ${company} (opens in a new tab)`}
+            href={url}
             target="_blank"
             ref={linkRef}
           >
@@ -61,7 +67,7 @@ export default function JobTitlePanel({ children, duration, title, company }) {
           </Link>
         </h4>
         <h6
-          aria-label="May 2018 to Present"
+          aria-label={`${duration.from} to ${duration.to}`}
           className="uppercase border-b-0.5 border-dark-800 pb-4 max-w-72"
         >
           {duration.from} &nbsp;—&nbsp; {duration.to}

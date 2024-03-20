@@ -12,7 +12,7 @@ export default function JobDescriptionPanel({ descriptions }) {
           <li
             key={index}
             role="listitem"
-            aria-label="A job role"
+            aria-label="A job responsibility"
             className="mb-3 ml-8 md:ml-4 pl-5 relative"
           >
             <p className="mb-0 sub-text leading-normal">

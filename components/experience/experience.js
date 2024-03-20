@@ -24,6 +24,7 @@ export default function Experience({ searchParams }) {
               duration={job.duration}
               title={job.title}
               company={job.company}
+              url={job.url}
             >
               <TechnologiesUsedList
                 technologies={job.technologies}

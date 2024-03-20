@@ -12,7 +12,9 @@ export default function ExperienceList({ jobs }) {
   const jobList = jobs.map((job) => job.company);
 
   useEffect(() => {
-    if (!searchParams.has(QUERY)) {
+    if (searchParams.has(QUERY)) {
+      setActiveIndex(+searchParams.get(QUERY));
+    } else {
       setActiveIndex(0);
     }
   }, [searchParams]);
@@ -26,11 +28,6 @@ export default function ExperienceList({ jobs }) {
     },
     [searchParams]
   );
-
-  const onClickHandler = (index) => {
-    pushQueryString(QUERY, index);
-    setActiveIndex(index);
-  };
 
   const pushQueryString = (name, value) => {
     router.push(
@@ -59,7 +56,7 @@ export default function ExperienceList({ jobs }) {
                   ? "border-gold-700 text-gold-700 bg-gold-700/10"
                   : ""
               }`}
-              onClick={() => onClickHandler(index)}
+              onClick={() => pushQueryString(QUERY, index)}
             >
               {job}
             </button>
