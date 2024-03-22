@@ -1,6 +1,7 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import AsteriskIcon from "@/public/icons/asterisk-icon.svg";
 import ProjectItem from "@/components/projects/project-item";
+import { projectContent } from "@/lib/const";
 
 export default function Projects() {
   return (
@@ -20,9 +21,9 @@ export default function Projects() {
       <div>
         <HeadingDash aria-hidden>Things I&apos;ve built</HeadingDash>
         <div className="max-w-3xl pt-3">
-          <ProjectItem name="project-item" />
-          <ProjectItem name="project-item" />
-          <ProjectItem name="project-item" />
+          {projectContent.projects.map((project, index) => (
+            <ProjectItem name="project-item" key={index} project={project} />
+          ))}
         </div>
       </div>
 

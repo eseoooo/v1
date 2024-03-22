@@ -3,7 +3,7 @@ import { useState } from "react";
 import ProjectTitle from "@/components/projects/project-title";
 import ProjectDetails from "@/components/projects/project-details";
 
-export default function ProjectItem({ name }) {
+export default function ProjectItem({ name, project }) {
   const [open, setOpen] = useState(false);
 
   const detailToggleHandler = (event) => {
@@ -27,8 +27,8 @@ export default function ProjectItem({ name }) {
       onToggle={detailToggleHandler}
       className="group focused-link border-0.5 border-dark-800 cursor-pointer max-h-24 first:rounded-t-md last:rounded-b-md overflow-hidden open:max-h-150 hover:border-gold-700 motion-safe:duration-300 motion-safe:ease-out"
     >
-      <ProjectTitle open={open} />
-      <ProjectDetails detailClickHandler={detailClickHandler} />
+      <ProjectTitle open={open} name={project.name} />
+      <ProjectDetails detailClickHandler={detailClickHandler} {...project} />
     </details>
   );
 }

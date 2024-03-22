@@ -1,14 +1,14 @@
 import PlusIcon from "@/public/icons/plus-icon.svg";
 import MinusIcon from "@/public/icons/minus-icon.svg";
 
-export default function ProjectTitle({ open }) {
+export default function ProjectTitle({ open, name }) {
   return (
     <summary
       className="group/title project-title focused-link py-6 md:py-7 px-4 md:px-6 flex justify-between"
-      aria-label="Project title: Product Development"
+      aria-label={`Project title: ${name}`}
     >
       <h4 aria-hidden className="inline-flex mb-0 font-normal">
-        Product Development
+        {name}
       </h4>
       {!open && (
         <span

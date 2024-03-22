@@ -53,7 +53,7 @@ export default function ExperienceList({ jobs }) {
               aria-label={`Company Name: ${job}`}
               className={`focused-link py-3 w-full font-medium text-sm md:text-base-base border-b-2 border-transparent hover:border-gold-700 hover:text-gold-700 hover:bg-gold-700/10 focus-visible:text-gold-700 focus-visible:bg-gold-700/10 duration-300 ease-out tracking-wider uppercase ${
                 activeIndex === index
-                  ? "border-gold-700 text-gold-700 bg-gold-700/10"
+                  ? "!border-gold-700 text-gold-700 bg-gold-700/10"
                   : ""
               }`}
               onClick={() => pushQueryString(QUERY, index)}
