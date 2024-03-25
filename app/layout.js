@@ -55,7 +55,6 @@ export default function RootLayout({ children }) {
             >
               {children}
             </main>
-            <footer></footer>
           </NotificationProvider>
         </FeatureProvider>
       </body>
