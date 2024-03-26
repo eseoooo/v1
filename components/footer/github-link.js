@@ -8,7 +8,7 @@ export default function GithubLink() {
       href={heroContent.github}
       target="_blank"
       aria-label={`Github Repo (opens in a new tab)`}
-      className="focused-link hover:text-gold-700 focus-visible:text-gold-700 duration-300 motion-safe:ease-out h-5 w-5"
+      className="focused-link !outline-offset-1 hover:text-gold-700 focus-visible:text-gold-700 duration-300 motion-safe:ease-out h-5 w-5"
     >
       <GitHubIcon aria-hidden />
     </Link>
