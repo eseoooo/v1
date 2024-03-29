@@ -3,6 +3,7 @@ import ExperienceList from "@/components/experience/experience-list";
 import JobTitlePanel from "@/components/experience/job-title-panel";
 import JobDescriptionPanel from "@/components/experience/job-description-panel";
 import TechnologiesUsedList from "@/components/shared/technologies-used-list";
+import ResumeLink from "@/components/experience/resume-link";
 import { experienceContent } from "@/lib/const";
 
 export default function Experience({ searchParams }) {
@@ -36,6 +37,8 @@ export default function Experience({ searchParams }) {
           </div>
         ))}
       </div>
+
+      <ResumeLink />
     </section>
   );
 }
