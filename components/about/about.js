@@ -1,6 +1,7 @@
 import HeadingDash from "@/components/ui/heading-dash";
 import { aboutContent } from "@/lib/const";
 import { parseMarkdownLinks } from "@/lib/utils";
+import FirstNameAudio from "@/components/about/first-name-audio";
 
 export default function About() {
   const yearsOfExperience = new Date().getFullYear() - 2021;
@@ -37,6 +38,19 @@ export default function About() {
             <span className="text-2xl lg:text-3xl -translate-y-4">Years</span>
           </h1>
           <div>
+            <p className="leading-relaxed max-w-xl">
+              Hello there! My name is Esegboria{" "}
+              <span>
+                <FirstNameAudio src="/audio/esegboria.mp3" />
+              </span>
+              , but you can call me Ese
+              <span>
+                <FirstNameAudio src="/audio/ese.mp3" />
+              </span>{" "}
+              for short. I am a front-end developer who is passionate about
+              creating user-friendly, accessible, responsive websites and web
+              applications.
+            </p>
             {description.length &&
               description.map((text, index) => (
                 <p className="leading-relaxed max-w-xl" key={index}>
