@@ -19,6 +19,9 @@ export default function Experience({ searchParams }) {
           <div
             key={index}
             tabIndex={0}
+            role="tabpanel"
+            aria-labelledby={`experience-${index}`}
+            id={`experience-${index}`}
             style={{ transform: `translateX(${id ? id * -100 : 0}%)` }}
             className="focused-link flex w-full min-w-full flex-col justify-center  md:flex-row gap-6 lgg:gap-x-10 duration-400 ease-out"
           >

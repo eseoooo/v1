@@ -18,7 +18,7 @@ export default function Hero() {
           aria-label="About me"
           className="focused-link text-gold-700 w-full motion-safe:animate-bounce"
         >
-          <ArrowDownRightIcon />
+          <ArrowDownRightIcon aria-hidden />
         </Link>
       </div>
 
