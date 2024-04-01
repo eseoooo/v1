@@ -10,7 +10,6 @@ export default function NavBar() {
         <HomeLink />
         <NavLinks />
 
-        {/* TODO: Add resume */}
         <button
           aria-label="menu"
           popovertarget="menu"

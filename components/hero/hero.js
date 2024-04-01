@@ -33,7 +33,6 @@ export default function Hero() {
               {parseMarkdownLinks(text)}
             </p>
           ))}
-        {/* TODO: Add github link */}
       </div>
     </section>
   );

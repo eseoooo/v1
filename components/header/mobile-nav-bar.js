@@ -56,7 +56,6 @@ export default function MobileNavBar() {
           />
         ))}
       </ol>
-      {/* TODO: Add resume */}
 
       <div className="flex justify-end">
         <ButtonSolid
