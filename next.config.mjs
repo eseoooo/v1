@@ -11,6 +11,7 @@ const nextConfig = {
       fullUrl: true,
     },
   },
+
   experimental: {
     webVitalsAttribution: ["FCP", "LCP", "CLS", "FID", "TTFB", "INP"],
   },
