@@ -37,7 +37,11 @@ export default function ExperienceList({ jobs }) {
 
   return (
     <div className="flex justify-center mb-8 relative">
-      <div className="w-full max-w-md absolute border-b-0.5 border-dark-800 bottom-3 md:bottom-4"></div>
+      <div
+        className={`w-full max-w-md absolute border-b-0.5 border-dark-800 ${
+          jobList.length > 2 ? "bottom-3 md:bottom-4" : "bottom-3"
+        } `}
+      ></div>
       <div
         role="tablist"
         aria-label="job list"
