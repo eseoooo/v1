@@ -42,10 +42,6 @@
   }
 
   h5 {
-    @apply text-sm md:text-base-base font-montserrat tracking-wider;
-  }
-
-  h6 {
     @apply text-xxs md:text-xs font-montserrat tracking-wider font-light;
   }
 

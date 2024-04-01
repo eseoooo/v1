@@ -38,12 +38,12 @@ export default function JobTitlePanel({
               </span>
             </Link>
           </h4>
-          <h6
+          <h5
             aria-label={`${duration.from} to ${duration.to}`}
             className="uppercase border-b-0.5 border-dark-800 pb-4 group-hover:border-gold-700 motion-safe:duration-200 motion-safe:ease-out"
           >
             {duration.from} &nbsp;—&nbsp; {duration.to}
-          </h6>
+          </h5>
           {children} {/* Technologies used */}
         </div>
       </div>
@@ -66,12 +66,12 @@ export default function JobTitlePanel({
             </span>
           </Link>
         </h4>
-        <h6
+        <h5
           aria-label={`${duration.from} to ${duration.to}`}
           className="uppercase border-b-0.5 border-dark-800 pb-4 max-w-72"
         >
           {duration.from} &nbsp;—&nbsp; {duration.to}
-        </h6>
+        </h5>
         {children} {/* Technologies used */}
       </div>
     </>

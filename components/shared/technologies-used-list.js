@@ -5,7 +5,7 @@ export default function TechnologiesUsedList({
 }) {
   return (
     <div className={`${className}`}>
-      {showHeader && <h6 className="mb-4">Technologies:</h6>}
+      {showHeader && <h5 className="mb-4">Technologies:</h5>}
       <ul
         role="list"
         aria-label="Technologies Used"
