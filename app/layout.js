@@ -5,6 +5,8 @@ import SkipToContent from "@/components/ui/skip-to-content";
 import NotificationProvider from "@/lib/context/notification-context";
 import FeatureProvider from "@/lib/context/feature-context";
 import { metadataObject } from "@/lib/const";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = { ...metadataObject };
 
@@ -26,6 +28,8 @@ export default function RootLayout({ children }) {
               className="h-dvh pt-16 lg:pt-17.5 mx-auto max-w-screen-2xl px-4 xs:px-12 lg:px-24 xl:px-40 outline-none"
             >
               {children}
+              <Analytics />
+              <SpeedInsights />
             </main>
           </NotificationProvider>
         </FeatureProvider>

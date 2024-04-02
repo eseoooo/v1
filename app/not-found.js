@@ -1,4 +1,3 @@
-import Link from "next/link";
 import NotFoundImage from "@/public/images/not-found.svg";
 
 export default function NotFound() {
@@ -9,9 +8,9 @@ export default function NotFound() {
     >
       <div className="max-w-xl w-full flex flex-col items-center gap-y-6">
         <NotFoundImage />
-        <Link className="button-outline focused-button" href="/">
+        <a className="button-outline focused-button" href="/">
           Go Home
-        </Link>
+        </a>
       </div>
     </section>
   );
