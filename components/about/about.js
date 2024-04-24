@@ -4,7 +4,7 @@ import { parseMarkdownLinks } from "@/lib/utils";
 import FirstNameAudio from "@/components/about/first-name-audio";
 
 export default function About() {
-  const yearsOfExperience = new Date().getFullYear() - 2021;
+  const yearsOfExperience = new Date().getFullYear() - 2020;
   const { description, sideDescription } = aboutContent;
 
   return (
